@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="OFF" shutdownHook="disable">
+    <Properties>
+        <property name="APP_NAME">${sys:zeka-stack.logging.appname}</property>
+        <property name="LOG_BASE_FOLDER">${sys:zeka-stack.logging.location}/${APP_NAME}</property>
+        <property name="LOG_FILENAME_PREFIX">${APP_NAME}</property>
+        <property name="LOG_OUTPUT_REF">${sys:zeka-stack.logging.output}</property>
+        <property name="PARENT_PACKAGE_NAME">${sys:zeka-stack.base.path}</property>
+        <property name="LOG_PROJECT_LEVEL">${sys:zeka-stack.logging.level.project}</property>
+        <property name="LOG_ROOT_LEVEL">${sys:zeka-stack.logging.level.root}</property>
+        <Property name="SHOW_LOG_LOCATION">${sys:zeka-stack.logging.enable-show-location}</Property>
+        <property name="LOG_CHARSET">UTF-8</property>
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+        <Property name="SHOW_LOG_LOCATION_LAYOUT">%location{.}</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <!--@formatter:off-->
+        <property name="CONSOLE_LOG_PATTERN">%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{[${LOG_LEVEL_PATTERN}]} [%traceId] [${ctx:traceId}] %clr{-}{faint} %clr{[%15.15t]}{faint} ${sys:SHOW_LOG_LOCATION_LAYOUT} %clr{::}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</property>
+        <!--@formatter:on-->
+    </Properties>
+
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <!-- 输出 json 格式的日志 -->
+            <JsonLayout/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.apache" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="com.alibaba.nacos.client" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="org.mybatis.spring.SqlSessionUtils" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="springfox.documentation" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="org.springframework" level="INFO" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="org.springframework.context.support" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="de.codecentric.boot.admin.client.registration.ApplicationRegistrator" level="ERROR"
+                includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="com.alibaba.dubbo.config.AbstractConfig" level="ERROR" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory" level="ERROR"
+                includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="com.ulisesbocchio.jasyptspringboot" level="INFO" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="io.swagger.models.parameters.AbstractSerializableParameter" level="ERROR" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="druid.sql" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="io.undertow.request.security" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="org.xnio.nio" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+        <Logger name="org.hibernate.validator.internal" level="WARN" includeLocation="${SHOW_LOG_LOCATION}"/>
+
+        <Logger name="${PARENT_PACKAGE_NAME}" level="${LOG_PROJECT_LEVEL}" additivity="false" includeLocation="${SHOW_LOG_LOCATION}">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Root level="${LOG_PROJECT_LEVEL}" includeLocation="${SHOW_LOG_LOCATION}">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+    </Loggers>
+</Configuration>

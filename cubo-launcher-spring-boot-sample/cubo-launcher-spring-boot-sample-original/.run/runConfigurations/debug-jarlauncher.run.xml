@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="debug-jarlauncher" type="JarApplication">
+        <option name="JAR_PATH"
+                value="$PROJECT_DIR$/cubo-launcher-spring-boot/cubo-launcher-spring-boot-sample/cubo-launcher-spring-boot-sample-original/target/cubo-launcher-spring-boot-sample-original-1.0.0-SNAPSHOT.jar"/>
+        <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$"/>
+        <option name="ALTERNATIVE_JRE_PATH"/>
+        <method v="2"/>
+    </configuration>
+</component>

@@ -1,0 +1,8 @@
+zeka-stack:
+    logging:
+        level:
+            project: debug
+            sample: info
+            root: error
+        enable-show-location: true
+        config: log4j2-json.xml

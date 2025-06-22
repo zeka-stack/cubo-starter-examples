@@ -1,0 +1,16 @@
+zeka-stack:
+    logging:
+        file:
+            name: xxx.log
+            path: /path/to/log/
+        app-name: ${project.artifactId}
+        config: log4j2-file.xml
+        group:
+            project: dev.dong4j.zeka.starter.sample.logsystem
+        level:
+            project: debug
+            starter: debug
+            dev.dong4j.zeka: debug
+            org.springframework: info
+            root: error
+        enable-show-location: true

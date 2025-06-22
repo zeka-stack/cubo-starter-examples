@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="debug-jarlauncher-thin" type="JarApplication">
+        <option name="JAR_PATH"
+                value="$PROJECT_DIR$/cubo-launcher-spring-boot-sample/cubo-launcher-spring-boot-sample-thin/target/cubo-launcher-spring-boot-sample-thin-06160222/cubo-launcher-spring-boot-sample-thin.jar"/>
+        <option name="VM_PARAMETERS"
+                value="-Dloader.path=$PROJECT_DIR$/../../../common/,$PROJECT_DIR$/cubo-launcher-spring-boot-sample/cubo-launcher-spring-boot-sample-thin/target/cubo-launcher-spring-boot-sample-thin-06160222/lib"/>
+        <option name="PROGRAM_PARAMETERS"
+                value="--slot.root=$PROJECT_DIR$/cubo-launcher-spring-boot-sample/cubo-launcher-spring-boot-sample-thin/target/cubo-launcher-spring-boot-sample-thin-06160222/ --slot.path=patch/ --slot.path=plugin/"/>
+        <option name="WORKING_DIRECTORY"
+                value="$PROJECT_DIR$/cubo-launcher-spring-boot-sample/cubo-launcher-spring-boot-sample-thin/target/cubo-launcher-spring-boot-sample-thin-06160222"/>
+        <option name="ALTERNATIVE_JRE_PATH"/>
+        <method v="2"/>
+    </configuration>
+</component>

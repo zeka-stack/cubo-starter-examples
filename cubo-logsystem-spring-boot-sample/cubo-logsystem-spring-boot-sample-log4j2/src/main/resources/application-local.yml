@@ -1,0 +1,10 @@
+zeka-stack:
+    logging:
+        file:
+            path: /path/to/logs/
+        level:
+            root: error
+            test: error
+        enable-show-location: true
+        group:
+            test: sample.logsystem, sample1.logsystem
