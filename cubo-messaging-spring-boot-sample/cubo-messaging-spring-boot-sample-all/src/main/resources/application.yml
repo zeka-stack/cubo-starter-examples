@@ -1,0 +1,35 @@
+zeka-stack:
+  messaging:
+    enable: false
+
+spring:
+  kafka:
+    bootstrap-servers: kafka.server:9092
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+rocketmq:
+  # Name server 地址，格式: host:port;host:port
+  name-server: rocketmq.server:9876
+  # 访问通道类型，可选值：LOCAL, CLOUD
+  access-channel: LOCAL
+  producer:
+    # 生产者组名
+    group:
+    # 命名空间
+    namespace:
+    # 是否启用消息追踪
+    enable-msg-trace: false
+    # 自定义追踪主题名称，默认使用RMQ_SYS_TRACE_TOPIC
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC
+    # 实例名称
+    instance-name: DEFAULT
+
+

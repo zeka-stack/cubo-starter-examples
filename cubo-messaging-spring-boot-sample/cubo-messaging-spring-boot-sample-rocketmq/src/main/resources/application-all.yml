@@ -1,0 +1,94 @@
+zeka-stack:
+  messaging:
+    enable: false
+
+rocketmq:
+  # Name server 地址，格式: host:port;host:port
+  name-server:
+  # 访问通道类型，可选值：LOCAL, CLOUD
+  access-channel:
+  producer:
+    # 生产者组名
+    group:
+    # 命名空间
+    namespace:
+    # 发送消息超时时间（毫秒）
+    send-message-timeout: 3000
+    # 消息体压缩阈值（字节），默认大于4K的消息会被压缩
+    compress-message-body-threshold: 4096
+    # 同步发送失败重试次数
+    retry-times-when-send-failed: 2
+    # 异步发送失败重试次数
+    retry-times-when-send-async-failed: 2
+    # 是否在发送失败时尝试其他Broker
+    retry-next-server: false
+    # 最大允许的消息大小（字节）
+    max-message-size: 4194304  # 4MB
+    # 访问密钥
+    access-key:
+    # 秘密密钥
+    secret-key:
+    # 是否启用消息追踪
+    enable-msg-trace: false
+    # 自定义追踪主题名称，默认使用RMQ_SYS_TRACE_TOPIC
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC
+    # 是否启用TLS
+    tls-enable: false
+    # 实例名称
+    instance-name: DEFAULT
+  pull-consumer:
+    # 消费者组名
+    group:
+    # 主题名称
+    topic:
+    # 消息模型，可选值：CLUSTERING（集群模式）、BROADCASTING（广播模式）
+    message-model: CLUSTERING
+    # 选择器类型，如TAG等
+    selector-type: TAG
+    # 选择器表达式，*表示全部匹配
+    selector-expression: "*"
+    # 访问密钥
+    access-key:
+    # 秘密密钥
+    secret-key:
+    # 每次拉取的最大消息数
+    pull-batch-size: 10
+    # 是否启用消息追踪
+    enable-msg-trace: false
+    # 自定义追踪主题名称，默认使用RMQ_SYS_TRACE_TOPIC
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC
+    # 是否启用TLS
+    tls-enable: false
+    # 实例名称
+    instance-name: DEFAULT
+    # 命名空间
+    namespace:
+  consumer:
+    # 消费者组名
+    group:
+    # 主题名称
+    topic:
+    # 消息模型，可选值：CLUSTERING（集群模式）、BROADCASTING（广播模式）
+    message-model: CLUSTERING
+    # 选择器类型，如TAG等
+    selector-type: TAG
+    # 选择器表达式，*表示全部匹配
+    selector-expression: "*"
+    # 访问密钥
+    access-key:
+    # 秘密密钥
+    secret-key:
+    # 每次拉取的最大消息数
+    pull-batch-size: 10
+    # 是否启用消息追踪
+    enable-msg-trace: false
+    # 自定义追踪主题名称，默认使用RMQ_SYS_TRACE_TOPIC
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC
+    # 是否启用TLS
+    tls-enable: false
+    # 实例名称
+    instance-name: DEFAULT
+    # 命名空间
+    namespace:
+    # 监听器配置，用于控制是否启用监听器
+    listeners: { }

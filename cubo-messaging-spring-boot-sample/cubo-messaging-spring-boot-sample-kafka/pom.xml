@@ -5,25 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>dev.dong4j</groupId>
-        <artifactId>cubo-starter-examples</artifactId>
+        <artifactId>cubo-messaging-spring-boot-sample</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>cubo-messaging-spring-boot-sample</artifactId>
-    <name>Cubo Messaging Spring Boot Sample</name>
-
-    <modules>
-        <module>cubo-messaging-spring-boot-sample-rocketmq</module>
-        <module>cubo-messaging-spring-boot-sample-kafka</module>
-        <module>cubo-messaging-spring-boot-sample-all</module>
-    </modules>
-
-    <packaging>pom</packaging>
+    <artifactId>cubo-messaging-spring-boot-sample-kafka</artifactId>
+    <name>Cubo Messaging Spring Boot Sample Kafka</name>
 
     <dependencies>
         <dependency>
             <groupId>dev.dong4j</groupId>
-            <artifactId>cubo-framework-spring-boot-starter</artifactId>
+            <artifactId>cubo-messaging-kafka-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 </project>

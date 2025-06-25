@@ -1,0 +1,137 @@
+zeka-stack:
+  messaging:
+    enable: false
+
+spring:
+  kafka:
+    # 公共配置（生产者和消费者共用）
+    bootstrap-servers: kafka.server:9092  # Kafka集群地址（必填，无默认值）
+    client-id:  # 客户端ID（用于服务端日志），默认由Kafka自动生成
+
+    properties: # 自定义Kafka原生参数（Map类型），无默认值
+      example.key: value
+    # 生产者配置
+    producer:
+      acks: 1  # 消息持久化保证级别：[0, 1, all/-1]。默认1（仅Leader写入成功即确认）
+      batch-size: 16384  # 批量发送大小（字节），默认16KB
+      buffer-memory: 33554432  # 生产者内存缓冲区大小（字节），默认32MB
+      compression-type: none  # 压缩算法：[none, gzip, snappy, lz4, zstd]
+      retries: 2147483647  # 发送失败重试次数（默认Integer.MAX_VALUE）
+      key-serializer: org.apache.kafka.common.serialization.ByteArraySerializer  # Key序列化器
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer  # Value序列化器
+      transaction-id-prefix:  # 启用事务时需设置前缀（如"tx-"），默认关闭事务
+    # 消费者配置
+    consumer:
+      group-id:  # 消费者组ID（必填，无默认值）
+      auto-offset-reset: latest  # 无偏移量时策略：[latest, earliest, none]
+      enable-auto-commit: true  # 是否自动提交偏移量（建议手动提交设为false）
+      auto-commit-interval: 5000  # 自动提交间隔（毫秒），默认5秒
+      fetch-min-size: 1  # 单次拉取最小数据量（字节），默认1字节
+      fetch-max-wait: 500  # 拉取数据最大等待时间（毫秒），默认500ms
+      max-poll-records: 500  # 单次poll()返回的最大消息数
+      heartbeat-interval: 3000  # 心跳检测间隔（毫秒），默认3秒
+      key-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer  # Key反序列化器
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer  # Value反序列化器
+    # 监听器容器配置（@KafkaListener行为控制）
+    listener:
+      type: single  # 监听器类型：[single, batch]
+      ack-mode: BATCH  # 手动提交偏移量模式：[RECORD, BATCH, TIME, COUNT, COUNT_TIME, MANUAL, MANUAL_IMMEDIATE]
+      concurrency: 1  # 每个容器的并发消费者线程数
+      poll-timeout: 5000  # poll()超时时间（毫秒）
+    # 安全认证配置（SASL/SSL）
+    security:
+      protocol: PLAINTEXT  # 安全协议：[PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL]
+    ssl:
+      trust-store-location:  # SSL证书路径（如file:/path/client.jks）
+      trust-store-password:  # 证书密码
+
+rocketmq:
+  # Name server 地址，格式: host:port;host:port
+  name-server: rocketmq.server:9876
+  # 访问通道类型，可选值：LOCAL, CLOUD
+  access-channel:
+  producer:
+    # 生产者组名
+    group:
+    # 命名空间
+    namespace:
+    # 发送消息超时时间（毫秒）
+    send-message-timeout: 3000
+    # 消息体压缩阈值（字节），默认大于4K的消息会被压缩
+    compress-message-body-threshold: 4096
+    # 同步发送失败重试次数
+    retry-times-when-send-failed: 2
+    # 异步发送失败重试次数
+    retry-times-when-send-async-failed: 2
+    # 是否在发送失败时尝试其他Broker
+    retry-next-server: false
+    # 最大允许的消息大小（字节）
+    max-message-size: 4194304  # 4MB
+    # 访问密钥
+    access-key:
+    # 秘密密钥
+    secret-key:
+    # 是否启用消息追踪
+    enable-msg-trace: false
+    # 自定义追踪主题名称，默认使用RMQ_SYS_TRACE_TOPIC
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC
+    # 是否启用TLS
+    tls-enable: false
+    # 实例名称
+    instance-name: DEFAULT
+  pull-consumer:
+    # 消费者组名
+    group:
+    # 主题名称
+    topic:
+    # 消息模型，可选值：CLUSTERING（集群模式）、BROADCASTING（广播模式）
+    message-model: CLUSTERING
+    # 选择器类型，如TAG等
+    selector-type: TAG
+    # 选择器表达式，*表示全部匹配
+    selector-expression: "*"
+    # 访问密钥
+    access-key:
+    # 秘密密钥
+    secret-key:
+    # 每次拉取的最大消息数
+    pull-batch-size: 10
+    # 是否启用消息追踪
+    enable-msg-trace: false
+    # 自定义追踪主题名称，默认使用RMQ_SYS_TRACE_TOPIC
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC
+    # 是否启用TLS
+    tls-enable: false
+    # 实例名称
+    instance-name: DEFAULT
+    # 命名空间
+    namespace:
+  consumer:
+    # 消费者组名
+    group:
+    # 主题名称
+    topic:
+    # 消息模型，可选值：CLUSTERING（集群模式）、BROADCASTING（广播模式）
+    message-model: CLUSTERING
+    # 选择器类型，如TAG等
+    selector-type: TAG
+    # 选择器表达式，*表示全部匹配
+    selector-expression: "*"
+    # 访问密钥
+    access-key:
+    # 秘密密钥
+    secret-key:
+    # 每次拉取的最大消息数
+    pull-batch-size: 10
+    # 是否启用消息追踪
+    enable-msg-trace: false
+    # 自定义追踪主题名称，默认使用RMQ_SYS_TRACE_TOPIC
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC
+    # 是否启用TLS
+    tls-enable: false
+    # 实例名称
+    instance-name: DEFAULT
+    # 命名空间
+    namespace:
+    # 监听器配置，用于控制是否启用监听器
+    listeners: { }
