@@ -6,7 +6,6 @@ spring:
   kafka:
     bootstrap-servers: kafka.server:9092
     consumer:
-      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring:
@@ -14,7 +13,6 @@ spring:
             trusted:
               packages: "*"
     producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 

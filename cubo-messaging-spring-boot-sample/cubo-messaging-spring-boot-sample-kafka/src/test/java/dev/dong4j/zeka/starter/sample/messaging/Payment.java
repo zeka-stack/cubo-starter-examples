@@ -1,14 +1,16 @@
 package dev.dong4j.zeka.starter.sample.messaging;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class Payment {
     // Getters
-    private String id;
-    private double amount;
+    private Long id;
+    private Double amount;
 
-    public Payment(String id, double amount) {
+    public Payment(Long id, double amount) {
         this.id = id;
         this.amount = amount;
     }

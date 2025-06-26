@@ -4,7 +4,7 @@ import dev.dong4j.zeka.starter.launcher.ZekaStarter;
 import dev.dong4j.zeka.starter.launcher.annotation.RunningType;
 import dev.dong4j.zeka.starter.launcher.enums.ApplicationType;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author dong4j
@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
  * @since x.x.x
  */
 @Slf4j
-@RunningType(ApplicationType.SERVICE)
-@EnableAutoConfiguration
+@RunningType(value = ApplicationType.SERVICE)
+@SpringBootApplication
 public class SampleKafkaApplication extends ZekaStarter {
 }
