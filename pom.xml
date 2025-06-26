@@ -88,6 +88,7 @@
         <module>cubo-launcher-spring-boot-sample</module>
         <module>cubo-logsystem-spring-boot-sample</module>
         <module>cubo-messaging-spring-boot-sample</module>
+        <!--mark-->
     </modules>
 
     <properties>
