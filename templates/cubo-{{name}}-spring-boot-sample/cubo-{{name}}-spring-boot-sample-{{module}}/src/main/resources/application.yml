@@ -1,3 +1,4 @@
 zeka-stack:
     {{name}}:
+  # 默认值, 只有在显式配置为 false 才会禁用组件
       enabled: true
