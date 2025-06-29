@@ -1,28 +1,28 @@
 # 日志系统所有默认配置
 zeka-stack:
-    logging:
-        app-name: @project.artifactId@
-        config: log4j2-console.xml
-        enable-show-location: true
-        group:
-            project: sample.logsystem
-        level:
-            project: debug
-            starter: debug
-            dev.dong4j.zeka.starter: debug
-            org.springframework: info
-            root: error
-        file:
-            name: all.log
-            path: /mnt/syslogs/zeka.stack/${project.artifactId}/${zeka-stack.logging.file.name}
-            clean-history-on-start: false
-            max-history: 30
-            max-size: 100MB
-            total-size-cap: 50
-        pattern:
-            level: '%5p'
-            marker: '%m%n'
-            dateformat: 'yyyy-MM-dd HH:mm:ss.SSS'
-            rolling-file-name: '%d{yyyyMMdd-HH}.%i.log.gz'
-            console: '%clr{%d{${zeka-stack.logging.pattern.dateformat}}}{faint} %clr{[${zeka-stack.logging.pattern.level}]} [%traceId] %clr{-}{faint} %clr{[%15.15t]}{faint} %location{.} %clr{::}{faint} %m%n%xwEx'
-            file: '%d{${zeka-stack.logging.pattern.dateformat}} ${zeka-stack.logging.pattern.level} [%traceId] - [%15.15t] %c{1.} :: %m%n%xwEx'
+  logging:
+    app-name: @project.artifactId@
+    config: log4j2-console.xml
+    enable-show-location: true
+    group:
+      project: sample.logsystem
+    level:
+      project: debug
+      starter: debug
+      dev.dong4j.zeka.starter: debug
+      org.springframework: info
+      root: error
+    file:
+      name: all.log
+      path: /mnt/syslogs/zeka.stack/${project.artifactId}/${zeka-stack.logging.file.name}
+      clean-history-on-start: false
+      max-history: 30
+      max-size: 100MB
+      total-size-cap: 50
+    pattern:
+      level: '%5p'
+      marker: '%m%n'
+      dateformat: 'yyyy-MM-dd HH:mm:ss.SSS'
+      rolling-file-name: '%d{yyyyMMdd-HH}.%i.log.gz'
+      console: '%clr{%d{${zeka-stack.logging.pattern.dateformat}}}{faint} %clr{[${zeka-stack.logging.pattern.level}]} [%traceId] %clr{-}{faint} %clr{[%15.15t]}{faint} %location{.} %clr{::}{faint} %m%n%xwEx'
+      file: '%d{${zeka-stack.logging.pattern.dateformat}} ${zeka-stack.logging.pattern.level} [%traceId] - [%15.15t] %c{1.} :: %m%n%xwEx'
