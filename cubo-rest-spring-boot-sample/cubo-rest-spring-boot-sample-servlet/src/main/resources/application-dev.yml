@@ -11,5 +11,5 @@ zeka-stack:
       root: DEBUG
       project: DEBUG
     file:
-      path: /Users/dong4j/Develop/work/fkh-stack/services/fkh-framework/fkh-kernel/fkh-rest-spring-boot/fkh-rest-spring-boot-sample/fkh-rest-spring-boot-sample-servlet/log/
+      path: ./log/
 
