@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dev.dong4j</groupId>
+        <artifactId>cubo-starter-examples</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>cubo-rest-spring-boot-sample</artifactId>
+    <name>Cubo Rest Spring Boot Sample</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>cubo-rest-spring-boot-sample-servlet</module>
+        <module>cubo-rest-spring-boot-sample-reactive</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>dev.dong4j</groupId>
+            <artifactId>cubo-framework-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 不包含在 rest 组件中, 又业务方自行引入 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
+</project>

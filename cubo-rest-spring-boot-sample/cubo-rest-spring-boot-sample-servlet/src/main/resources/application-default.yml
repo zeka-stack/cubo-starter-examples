@@ -1,0 +1,26 @@
+server:
+  undertow:
+    io-threads: 16
+    worker-threads: 256
+    buffer-size: 1024
+    direct-buffers: true
+    accesslog:
+      dir: my-undertow
+      enabled: true
+      pattern: '%t %a "%r" %s (%D ms)'
+
+zeka-stack:
+  rest:
+    connect-timeout: 3000
+    read-timeout: 5000
+    write-timeout: 5000
+    enable-browser: true
+    enable-container-log: false
+    enable-entity-enum-all-field-serialize: true
+    enable-exception-filter: true
+    enable-global-cache-filter: true
+    enable-global-parameter-filter: false
+    enable-http2: false
+    xss:
+      enable-xss-filter: true
+      exclude-patterns:

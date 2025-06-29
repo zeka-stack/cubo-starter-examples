@@ -1,0 +1,19 @@
+zeka-stack:
+  rest:
+    enable-browser: false
+    enable-global-parameter-filter: false
+    xss:
+      enable-xss-filter: true
+      exclude-patterns:
+        - /json
+  web:
+    ignore-cache-request-url: /enum/convert_1
+  logging:
+    level:
+      root: debug
+      project: debug
+      starter: debug
+    config: log4j2-console.xml
+spring:
+  jackson:
+    default-property-inclusion: non_null
