@@ -1,7 +1,7 @@
 package dev.dong4j.zeka.starter.sample.mybatis.single.entity.dto;
 
 import dev.dong4j.zeka.kernel.common.base.BaseDTO;
-import dev.dong4j.zeka.kernel.common.enums.DeleteEnum;
+import dev.dong4j.zeka.kernel.common.enums.DeletedEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -36,6 +36,6 @@ public class UserDTO extends BaseDTO<Long> {
     /** Email */
     private String email;
     /** Deleted */
-    private DeleteEnum deleted;
+    private DeletedEnum deleted;
 
 }

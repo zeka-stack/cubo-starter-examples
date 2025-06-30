@@ -3,7 +3,7 @@ package dev.dong4j.zeka.starter.sample.mybatis.integration.entity.po;
 import com.baomidou.mybatisplus.annotation.TableName;
 import dev.dong4j.zeka.starter.mybatis.base.BaseExtendPO;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.GenderEnum;
-import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStatusEnum;
+import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStateEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -45,8 +45,8 @@ public class User extends BaseExtendPO<Long, User> {
     public static final String SECRET_KEY = "secret_key";
     /** EMAIL */
     public static final String EMAIL = "email";
-    /** STATUS */
-    public static final String STATUS = "status";
+    /** STATE */
+    public static final String STATE = "state";
     /** GENDER */
     public static final String GENDER = "gender";
     /** serialVersionUID */
@@ -70,7 +70,7 @@ public class User extends BaseExtendPO<Long, User> {
     /** 用户邮箱 */
     private String email;
     /** 用户状态:0: 未审核, 1: 审核中, 2: 审核未通过, 3: 已锁定, 4: 正常 */
-    private UserStatusEnum status;
+    private UserStateEnum state;
     /** 性别枚举 */
     private GenderEnum gender;
 }

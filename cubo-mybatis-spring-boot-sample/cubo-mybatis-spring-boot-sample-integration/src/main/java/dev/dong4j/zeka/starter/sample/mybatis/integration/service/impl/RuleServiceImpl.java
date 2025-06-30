@@ -1,7 +1,7 @@
 package dev.dong4j.zeka.starter.sample.mybatis.integration.service.impl;
 
-import dev.dong4j.zeka.kernel.common.enums.DeleteEnum;
-import dev.dong4j.zeka.kernel.common.enums.EnableEnum;
+import dev.dong4j.zeka.kernel.common.enums.DeletedEnum;
+import dev.dong4j.zeka.kernel.common.enums.EnabledEnum;
 import dev.dong4j.zeka.kernel.common.exception.BaseException;
 import dev.dong4j.zeka.starter.mybatis.service.impl.BaseServiceImpl;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.dao.RuleDao;
@@ -43,9 +43,9 @@ public class RuleServiceImpl extends BaseServiceImpl<RuleDao, Rule> implements R
         rule.setMatchMode(MatchModeEnum.EQUALS);
         rule.setName("xxx");
         rule.setPriority(1);
-        rule.setEnabled(EnableEnum.OFF);
+        rule.setEnabled(EnabledEnum.OFF);
         rule.setDispatchMode(DispatchModeEnum.IP_HASH);
-        rule.setDeleted(DeleteEnum.Y);
+        rule.setDeleted(DeletedEnum.Y);
         this.ruleDao.insert(rule);
 
         throw new BaseException();

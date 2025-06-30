@@ -1,11 +1,11 @@
 package dev.dong4j.zeka.starter.sample.mybatis.integration.service.impl;
 
-import dev.dong4j.zeka.kernel.common.enums.DeleteEnum;
+import dev.dong4j.zeka.kernel.common.enums.DeletedEnum;
 import dev.dong4j.zeka.starter.mybatis.service.impl.BaseServiceImpl;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.dao.UserDao;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.po.User;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.GenderEnum;
-import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStatusEnum;
+import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStateEnum;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.service.RuleService;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.service.UserService;
 import javax.annotation.Resource;
@@ -48,9 +48,9 @@ public class UserServiceImpl extends BaseServiceImpl<UserDao, User> implements U
         user.setApiKey("xxxx");
         user.setSecretKey("xxxx");
         user.setEmail("arraydsj@163.com");
-        user.setStatus(UserStatusEnum.NORMAL);
+        user.setState(UserStateEnum.NORMAL);
         user.setGender(GenderEnum.MAN);
-        user.setDeleted(DeleteEnum.N);
+        user.setDeleted(DeletedEnum.N);
         this.userDao.insert(user);
 
         this.ruleService.transactional();

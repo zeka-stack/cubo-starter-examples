@@ -1,6 +1,6 @@
 package dev.dong4j.zeka.starter.sample.mybatis.single.entity.po;
 
-import dev.dong4j.zeka.kernel.common.enums.DeleteEnum;
+import dev.dong4j.zeka.kernel.common.enums.DeletedEnum;
 import dev.dong4j.zeka.starter.mybatis.base.BasePO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,6 +32,6 @@ public class User extends BasePO<Long, User> {
     /** Email */
     private String email;
     /** Deleted */
-    private DeleteEnum deleted;
+    private DeletedEnum deleted;
 
 }

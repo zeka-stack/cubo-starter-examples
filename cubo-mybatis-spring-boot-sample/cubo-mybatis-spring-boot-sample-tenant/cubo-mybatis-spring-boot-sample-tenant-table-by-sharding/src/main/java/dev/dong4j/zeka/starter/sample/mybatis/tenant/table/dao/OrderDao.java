@@ -29,8 +29,8 @@ public interface OrderDao {
      * @return int int
      * @since 1.0.0
      */
-    @Insert("insert into t_order(price,user_id,status)values(#{price},#{userId},#{status})")
-    int insertOrder(@Param("price") BigDecimal price, @Param("userId") Long userId, @Param("status") String status);
+    @Insert("insert into t_order(price,user_id,status)values(#{price},#{userId},#{state})")
+    int insertOrder(@Param("price") BigDecimal price, @Param("userId") Long userId, @Param("state") String state);
 
     /**
      * 根据id列表查询订单

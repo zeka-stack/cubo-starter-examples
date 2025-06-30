@@ -3,7 +3,7 @@ package dev.dong4j.zeka.starter.sample.mybatis.integration.dao;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import dev.dong4j.zeka.kernel.common.constant.ConfigKey;
 import dev.dong4j.zeka.kernel.common.context.SpringContext;
-import dev.dong4j.zeka.kernel.common.enums.DeleteEnum;
+import dev.dong4j.zeka.kernel.common.enums.DeletedEnum;
 import dev.dong4j.zeka.kernel.common.util.Tools;
 import dev.dong4j.zeka.starter.mybatis.support.Condition;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.MybatisApplicationTest;
@@ -11,7 +11,7 @@ import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.dto.UserDTO;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.form.UserQuery;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.po.User;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.GenderEnum;
-import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStatusEnum;
+import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStateEnum;
 import java.io.IOException;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -55,9 +55,9 @@ class UserDaoTest extends MybatisApplicationTest {
         user.setApiKey("xxxx");
         user.setSecretKey("xxxx");
         user.setEmail("arraydsj@163.com");
-        user.setStatus(UserStatusEnum.NORMAL);
+        user.setState(UserStateEnum.NORMAL);
         user.setGender(GenderEnum.MAN);
-        user.setDeleted(DeleteEnum.N);
+        user.setDeleted(DeletedEnum.N);
 
         Tools.repeat(1000, () -> {
             this.userDao.insert(user);
@@ -81,9 +81,9 @@ class UserDaoTest extends MybatisApplicationTest {
         user.setApiKey("xxxx");
         user.setSecretKey("xxxx");
         user.setEmail("arraydsj@163.com");
-        user.setStatus(UserStatusEnum.NORMAL);
+        user.setState(UserStateEnum.NORMAL);
         user.setGender(GenderEnum.MAN);
-        user.setDeleted(DeleteEnum.N);
+        user.setDeleted(DeletedEnum.N);
         this.userDao.insertIgnore(user);
     }
 

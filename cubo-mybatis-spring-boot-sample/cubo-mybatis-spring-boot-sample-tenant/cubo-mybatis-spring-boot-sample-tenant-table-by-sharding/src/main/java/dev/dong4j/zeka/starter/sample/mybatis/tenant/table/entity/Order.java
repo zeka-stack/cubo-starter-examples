@@ -30,5 +30,5 @@ public class Order implements Serializable {
     /** User id */
     private Long userId;
     /** Status */
-    private String status;
+    private String state;
 }

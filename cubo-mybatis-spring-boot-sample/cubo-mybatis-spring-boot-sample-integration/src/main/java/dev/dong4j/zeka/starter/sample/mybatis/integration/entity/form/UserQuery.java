@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.mybatis.integration.entity.form;
 
 import dev.dong4j.zeka.kernel.common.base.BaseQuery;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.GenderEnum;
-import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStatusEnum;
+import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStateEnum;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,7 +41,7 @@ public class UserQuery extends BaseQuery<Long> {
     /** 用户邮箱 */
     private String email;
     /** 用户状态:0: 未审核, 1: 审核中, 2: 审核未通过, 3: 已锁定, 4: 正常 */
-    private UserStatusEnum status;
+    private UserStateEnum state;
     /** 性别枚举 */
     private GenderEnum gender;
 }

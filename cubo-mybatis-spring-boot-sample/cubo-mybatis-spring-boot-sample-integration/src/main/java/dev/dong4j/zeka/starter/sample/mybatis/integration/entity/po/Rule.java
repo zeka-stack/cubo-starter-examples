@@ -1,7 +1,7 @@
 package dev.dong4j.zeka.starter.sample.mybatis.integration.entity.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import dev.dong4j.zeka.kernel.common.enums.EnableEnum;
+import dev.dong4j.zeka.kernel.common.enums.EnabledEnum;
 import dev.dong4j.zeka.starter.mybatis.base.BaseExtendPO;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.DispatchModeEnum;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.MatchModeEnum;
@@ -55,7 +55,7 @@ public class Rule extends BaseExtendPO<Long, Rule> {
     /** 匹配优先级 */
     private Integer priority;
     /** 是否启用 */
-    private EnableEnum enabled;
+    private EnabledEnum enabled;
     /** 分发模式,如iphash、round-robin、random */
     private DispatchModeEnum dispatchMode;
 }

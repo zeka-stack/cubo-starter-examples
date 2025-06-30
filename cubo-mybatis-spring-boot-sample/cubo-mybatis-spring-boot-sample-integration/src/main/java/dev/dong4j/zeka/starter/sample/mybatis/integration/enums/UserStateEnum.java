@@ -15,7 +15,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum UserStatusEnum implements SerializeEnum<Integer> {
+public enum UserStateEnum implements SerializeEnum<Integer> {
     /** Not check user status enum */
     NOT_CHECK(0, "未审核"),
     /** Checking user status enum */
