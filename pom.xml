@@ -89,6 +89,7 @@
         <!-- <module>cubo-logsystem-spring-boot-sample</module> -->
         <!-- <module>cubo-messaging-spring-boot-sample</module> -->
         <!--mark-->
+        <module>cubo-mybatis-spring-boot-sample</module>
         <module>cubo-openapi-spring-boot-sample</module>
         <module>cubo-endpoint-spring-boot-sample</module>
         <module>cubo-rest-spring-boot-sample</module>

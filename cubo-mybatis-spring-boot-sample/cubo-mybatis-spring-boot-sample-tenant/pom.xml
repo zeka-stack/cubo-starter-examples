@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>dev.dong4j</groupId>
+        <artifactId>cubo-mybatis-spring-boot-sample</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>cubo-mybatis-spring-boot-sample-tenant</artifactId>
+    <packaging>pom</packaging>
+    <name>Cubo Mybatis Spring Boot Sample Tenant</name>
+    <description>多租户实现</description>
+
+    <modules>
+        <module>cubo-mybatis-spring-boot-sample-tenant-table</module>
+        <module>cubo-mybatis-spring-boot-sample-tenant-field</module>
+        <module>cubo-mybatis-spring-boot-sample-tenant-table-by-sharding</module>
+    </modules>
+
+</project>
