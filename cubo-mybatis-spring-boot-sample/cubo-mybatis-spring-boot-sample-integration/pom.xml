@@ -25,16 +25,10 @@
             <artifactId>blen-kernel-devtools</artifactId>
         </dependency>
 
-
         <!-- <dependency> -->
-        <!--     <groupId>dev.dong4j</groupId> -->
-        <!--     <artifactId>cubo-cache-spring-boot-starter</artifactId> -->
-        <!-- </dependency> -->
-
-        <!-- <dependency> -->
-        <!--    <groupId>p6spy</groupId> -->
-        <!--    <artifactId>p6spy</artifactId> -->
-        <!--    <version>3.9.1</version> -->
+        <!--     <groupId>p6spy</groupId> -->
+        <!--     <artifactId>p6spy</artifactId> -->
+        <!--     <scope>test</scope> -->
         <!-- </dependency> -->
     </dependencies>
 

@@ -39,7 +39,7 @@ class ExceptionControllerTest extends Chapter22ApplicationTest {
         ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
         objectNode.put("username", "dong4j");
         objectNode.put("password", "xxxxx");
-        objectNode.put("phone", "18628362906");
+        objectNode.put("phone", "18000000000");
         objectNode.put("code", "1234");
         objectNode.put("uuid", "4321");
         byte[] body = JsonUtils.toJsonAsBytes(objectNode);
@@ -75,7 +75,7 @@ class ExceptionControllerTest extends Chapter22ApplicationTest {
         ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
         objectNode.put("username", "dong4j");
         objectNode.put("password", "xxxxx");
-        objectNode.put("phone", "18628362906");
+        objectNode.put("phone", "18000000000");
         objectNode.put("code", "");
         objectNode.put("uuid", "4321");
         byte[] body = JsonUtils.toJsonAsBytes(objectNode);

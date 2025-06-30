@@ -139,7 +139,7 @@ class PhoneTest extends SampleRestApplicationTest {
             .password("123456")
             .code("xxx")
             .uuid("xxx")
-            .phone("18628362906")
+            .phone("18000000000")
             .build();
 
         try {

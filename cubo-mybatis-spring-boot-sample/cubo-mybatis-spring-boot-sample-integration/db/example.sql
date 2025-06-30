@@ -30,7 +30,7 @@ create index user_info_username_index on mybatis_spring_boot_sample_integration.
 insert into mybatis_spring_boot_sample_integration.user (id, phone, user_name, gender, nick_name, company_name, password, salt, api_key,
                                                          secret_key, email, state,
                                                          deleted, create_time, update_time)
-values (1, '18628362906', 'dong4j', 1, 'dong4j', 'iHome', '000000', '000000', '000000', '000000', 'dong4j@gmail.com', 4, 0,
+values (1, '18000000000', 'dong4j', 1, 'dong4j', 'iHome', '000000', '000000', '000000', '000000', 'dong4j@gmail.com', 4, 0,
         '2019-09-25 18:02:21', '2019-09-25 18:02:21');
 
 

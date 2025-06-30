@@ -46,7 +46,7 @@ class UserDaoTest extends MybatisApplicationTest {
     @Test
     void test_save() {
         User user = new User();
-        user.setPhone("18628362906");
+        user.setPhone("18000000000");
         user.setUserName("dong4j");
         user.setNickName("dong4j");
         user.setCompanyName("iHome");
@@ -72,7 +72,7 @@ class UserDaoTest extends MybatisApplicationTest {
     @Test
     void test_insert() {
         User user = new User();
-        user.setPhone("18628362906");
+        user.setPhone("18000000000");
         user.setUserName("dong4j");
         user.setNickName("dong4j");
         user.setCompanyName("iHome");
@@ -105,7 +105,7 @@ class UserDaoTest extends MybatisApplicationTest {
      */
     @Test
     void test2() {
-        log.info("{}", this.userDao.selectList(Wrappers.query(new User().setPhone("18628362906"))));
+        log.info("{}", this.userDao.selectList(Wrappers.query(new User().setPhone("18000000000"))));
     }
 
     /**

@@ -39,7 +39,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserDao, User> implements U
     @Transactional(rollbackFor = Throwable.class)
     public void transactional() {
         User user = new User();
-        user.setPhone("18628362906");
+        user.setPhone("18000000000");
         user.setUserName("dong4j");
         user.setNickName("dong4j");
         user.setCompanyName("iHome");

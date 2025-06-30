@@ -1,13 +1,17 @@
 package dev.dong4j.zeka.starter.sample.mybatis.integration.service;
 
+import dev.dong4j.zeka.kernel.test.ZekaTest;
+import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.form.UserQuery;
+import javax.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.test.context.TestPropertySource;
 
 /**
- * <p>Description: </p>
+ * 使用 spring.config.location=classpath:/application-junit-p6spy.yml 只加载单独的配置, 不会加载 application.yml
+ *
  *
  * @author dong4j
  * @version 1.0.0
@@ -15,8 +19,49 @@ import org.springframework.test.context.TestPropertySource;
  * @date 2021.01.25 23:53
  * @since 1.7.1
  */
-@TestPropertySource(locations = "classpath:application-junit-p6spy.yml")
-public class P6spyServiceTest extends UserServiceTest {
+@Slf4j
+@ZekaTest(properties = {
+    "spring.config.location=classpath:/application-junit-p6spy.yml"
+})
+public class P6spyServiceTest {
+
+    /** User service */
+    @Resource
+    private UserService userService;
+
+    /**
+     * Test
+     *
+     * @since 1.0.0
+     */
+    @Test
+    void test() {
+        log.info("{}", this.userService.list().size());
+        log.info("{}", this.userService.list());
+        log.info("{}", this.userService.list().get(0).getId());
+    }
+
+    /**
+     * Test 3
+     *
+     * @since 1.6.0
+     */
+    @Test
+    void test3() {
+        UserQuery query = UserQuery.builder().build();
+        query.setUserName("dong4j");
+        log.info("{}", this.userService.list(query).size());
+    }
+
+    /**
+     * Test transactional
+     *
+     * @since 1.7.1
+     */
+    @Test
+    void test_transactional() {
+        this.userService.transactional();
+    }
 
     /**
      * Test
@@ -24,9 +69,7 @@ public class P6spyServiceTest extends UserServiceTest {
      * @since 1.7.1
      */
     @Test
-    @Override
-    void test() {
-        super.test();
+    void testxx() {
 
         int a = 0;
         Logger p6spy = LoggerFactory.getLogger("p6spy");

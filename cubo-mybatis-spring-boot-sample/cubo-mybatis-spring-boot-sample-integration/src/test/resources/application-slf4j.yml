@@ -1,11 +1,18 @@
+server:
+  port: 9091
+
 spring:
   datasource:
     url: jdbc:mysql://mysql.server:3306/mybatis_spring_boot_sample_integration?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2b8
     username: root
     password: rootpassword
 
+
 zeka-stack:
-  mybatis:
-    enable-sql-explain-interceptor: true
-    performmax-time: 200
-    sql-format: false
+  logging:
+    level:
+      project: debug
+mybatis-plus:
+  configuration:
+    ### 开启打印sql配置
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
