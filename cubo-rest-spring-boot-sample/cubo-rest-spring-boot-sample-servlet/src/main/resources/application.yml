@@ -10,7 +10,7 @@ server:
     buffer-size: 1024
     direct-buffers: true
     accesslog:
-      dir: my-undertow
+      dir: undertow
       enabled: true
       pattern: '%t %a "%r" %s (%D ms)'
   port: 8080
