@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#./deploy.sh          # 等同于 ./deploy.sh start
-#./deploy.sh restart  # 只重启
-#./deploy.sh stop     # 停止服务
-
 # ------------------- 配置项 -------------------
 REMOTE="root@ubuntu@orb"
 REMOTE_DIR="~"
@@ -14,12 +10,14 @@ DEPLOY_DIR="cubo-rest-spring-boot-sample-servlet"
 # 0. 获取操作参数，默认为 start
 ACTION=${1:-start}
 
-if [[ ! "$ACTION" =~ ^(start|restart|stop)$ ]]; then
-  echo "用法: $0 [start|restart|stop]"
+if [[ ! "$ACTION" =~ ^(start|restart|stop|destroy)$ ]]; then
+  echo "用法: $0 [start|restart|stop|destroy]"
   exit 1
 fi
 
-# 根据操作定义命令
+PACKAGE_BASENAME=$(basename "$PACKAGE")
+
+# 定义远程执行命令
 case "$ACTION" in
   start)
     START_CMD="cd $DEPLOY_DIR && bin/server.sh -s prod -t -i"
@@ -29,6 +27,9 @@ case "$ACTION" in
     ;;
   stop)
     START_CMD="cd $DEPLOY_DIR && bin/server.sh -S prod"
+    ;;
+  destroy)
+    START_CMD="cd $DEPLOY_DIR && bin/server.sh -S prod && cd $REMOTE_DIR && rm -rf $DEPLOY_DIR $PACKAGE_BASENAME"
     ;;
 esac
 
@@ -52,7 +53,7 @@ if [[ "$ACTION" == "start" ]]; then
   fi
 
   echo "📦 正在远程解压..."
-  ssh "$REMOTE" "cd $REMOTE_DIR && tar -zxvf $(basename $PACKAGE)"
+  ssh "$REMOTE" "cd $REMOTE_DIR && tar -zxvf $PACKAGE_BASENAME"
 fi
 
 # 执行远程命令
