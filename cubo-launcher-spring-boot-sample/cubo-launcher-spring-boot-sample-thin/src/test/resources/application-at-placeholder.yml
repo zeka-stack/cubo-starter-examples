@@ -1,9 +1,9 @@
 spring:
-    application:
-        name: @project.artifactId@
+  application:
+    name: @project.artifactId@
 zeka-stack:
-    app:
-        custom:
-            aa: bb
-            cc: ${zeka-stack.app.custom.aa}
+  app:
+    custom:
+      aa: bb
+      cc: ${zeka-stack.app.custom.aa}
 
