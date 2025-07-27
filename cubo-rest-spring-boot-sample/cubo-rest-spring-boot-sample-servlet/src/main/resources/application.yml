@@ -8,6 +8,8 @@ server:
       dir: undertow
       enabled: true
       pattern: '%t %a "%r" %s (%D ms)'
+      prefix: access_log.
+      suffix: log
   port: 8080
 
 spring:
@@ -21,3 +23,5 @@ zeka-stack:
   logging:
     file:
       path: logs
+
+
