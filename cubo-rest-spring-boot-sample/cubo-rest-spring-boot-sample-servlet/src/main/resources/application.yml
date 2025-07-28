@@ -8,7 +8,7 @@ server:
       dir: undertow
       enabled: true
       pattern: '%t %a "%r" %s (%D ms)'
-      prefix: access_log.
+      prefix: access.
       suffix: log
   port: 8080
 
