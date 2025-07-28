@@ -394,24 +394,24 @@ while getopts "s:r:S:d:m:c:n:h:o:tqTiwH" opt; do
   H)
     echo -e "\033[0;36m
 1. 在任何目录下执行此脚本都可以.
-2. 最简单的命令就是不输入任何参数 (./server.sh 即以${ENV}环境启动应用).
+2. 最简单的命令就是不输入任何参数 (./launcher 即以${ENV}环境启动应用).
 3. 输入 -s , -r 和 -S 参数, 后面必须跟环境变量 (dev/test/prod);
 4. -d, -t, -T -i 参数不能单独存在, 且必须跟在 -s 或者 -r 后面;
 5. -h 参数不需要手动调用, 是程序自动调用, 用于启动 helper 进程来对主应用进行重启操作.\033[0m  \033[0;34m
 
--s:启动应用             exp: bin/server.sh                      (默认以 ${ENV} 环境启动应用, 不需要输入任何参数)
--s:启动应用             exp: bin/server.sh -s test              (以 test 环境启动应用)
--r:重启应用             exp: bin/server.sh -r prod              (以 prod 环境重启应用)
--S:关闭应用             exp: bin/server.sh -S test              (关闭应用)
--c:查看状态             exp: bin/server.sh -c test              (查看应用状态)
--t:查看日志             exp: bin/server.sh -s dev               (启动时自动 tail 全量日志)
--q:查看日志(0秒超时时间)exp：bin/server.sh -s dev -q   		   (-t和-q全是查看日志，一个有超时时间，一个没有，二择其一就可以，-t优先级要高)
--T:输出日志到临时文件\texp: bin/server.sh -s dev -T\t\t(启动时自动 tail 全量日志, 主要用于部署测试用, 日志会写入到临时文件, 生产环境不要使用)
--d:debug 模式\t\texp: bin/server.sh -s dev -d 5005\t(以 dev 环境启动应用, 端口默认为 5005, 并且开启 debug 模式, 用于 idea 远程调试)
--i:输出所有参数信息\texp: bin/server.sh -s dev -i\t\t(启动时输出参数信息)
--w:启用 APM\texp: bin/server.sh -s dev -w\t\t(启动时输出参数信息)
--m:启用 JMX 远程监控\texp: bin/server.sh -s dev -m 10089\t\t(需要添加监听端口)
--o:重写 JVM 配置\texp: bin/server.sh -s dev -o '-Xms256M -Xmx512M'\t\t(启动时输出参数信息)
+-s:启动应用             exp: bin/launcher                      (默认以 ${ENV} 环境启动应用, 不需要输入任何参数)
+-s:启动应用             exp: bin/launcher -s test              (以 test 环境启动应用)
+-r:重启应用             exp: bin/launcher -r prod              (以 prod 环境重启应用)
+-S:关闭应用             exp: bin/launcher -S test              (关闭应用)
+-c:查看状态             exp: bin/launcher -c test              (查看应用状态)
+-t:查看日志             exp: bin/launcher -s dev               (启动时自动 tail 全量日志)
+-q:查看日志(0秒超时时间)exp：bin/launcher -s dev -q   		   (-t和-q全是查看日志，一个有超时时间，一个没有，二择其一就可以，-t优先级要高)
+-T:输出日志到临时文件\texp: bin/launcher -s dev -T\t\t(启动时自动 tail 全量日志, 主要用于部署测试用, 日志会写入到临时文件, 生产环境不要使用)
+-d:debug 模式\t\texp: bin/launcher -s dev -d 5005\t(以 dev 环境启动应用, 端口默认为 5005, 并且开启 debug 模式, 用于 idea 远程调试)
+-i:输出所有参数信息\texp: bin/launcher -s dev -i\t\t(启动时输出参数信息)
+-w:启用 APM\texp: bin/launcher -s dev -w\t\t(启动时输出参数信息)
+-m:启用 JMX 远程监控\texp: bin/launcher -s dev -m 10089\t\t(需要添加监听端口)
+-o:重写 JVM 配置\texp: bin/launcher -s dev -o '-Xms256M -Xmx512M'\t\t(启动时输出参数信息)
 \033[0m"
     exit 1
     ;;

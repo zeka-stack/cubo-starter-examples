@@ -20,16 +20,16 @@ PACKAGE_BASENAME=$(basename "$PACKAGE")
 # 定义远程执行命令
 case "$ACTION" in
   start)
-    START_CMD="cd $DEPLOY_DIR && bin/server.sh -s prod -t -i"
+    START_CMD="cd $DEPLOY_DIR && bin/launcher -s prod -t -i"
     ;;
   restart)
-    START_CMD="cd $DEPLOY_DIR && bin/server.sh -r prod -t -i"
+    START_CMD="cd $DEPLOY_DIR && bin/launcher -r prod -t -i"
     ;;
   stop)
-    START_CMD="cd $DEPLOY_DIR && bin/server.sh -S prod"
+    START_CMD="cd $DEPLOY_DIR && bin/launcher -S prod"
     ;;
   destroy)
-    START_CMD="cd $DEPLOY_DIR && bin/server.sh -S prod && cd $REMOTE_DIR && rm -rf $DEPLOY_DIR $PACKAGE_BASENAME"
+    START_CMD="cd $DEPLOY_DIR && bin/launcher -S prod && cd $REMOTE_DIR && rm -rf $DEPLOY_DIR $PACKAGE_BASENAME"
     ;;
 esac
 
