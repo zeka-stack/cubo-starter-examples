@@ -14,6 +14,8 @@ zeka-stack:
       project: debug
       starter: debug
     config: log4j2-console.xml
+    file:
+      path: logs
 spring:
   jackson:
     default-property-inclusion: non_null

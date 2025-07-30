@@ -11,5 +11,5 @@ zeka-stack:
       root: DEBUG
       project: DEBUG
     file:
-      path: ./log/
+      path: logs
 
