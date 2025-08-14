@@ -3,7 +3,7 @@ package dev.dong4j.zeka.starter.sample.rest.validation.controller;
 import dev.dong4j.zeka.kernel.common.api.R;
 import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.starter.sample.rest.validation.request.RequestFormWithCustomConstraint;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;

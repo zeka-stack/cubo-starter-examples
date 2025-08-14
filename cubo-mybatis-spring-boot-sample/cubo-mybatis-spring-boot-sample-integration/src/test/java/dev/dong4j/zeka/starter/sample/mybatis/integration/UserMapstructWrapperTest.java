@@ -4,7 +4,7 @@ import dev.dong4j.zeka.starter.sample.mybatis.integration.dao.UserDao;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.dto.UserDTO;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.po.User;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.wrapper.UserMapstructWrapper;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

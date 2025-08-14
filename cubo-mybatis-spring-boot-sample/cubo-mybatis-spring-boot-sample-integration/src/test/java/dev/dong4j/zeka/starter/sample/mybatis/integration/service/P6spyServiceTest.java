@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.mybatis.integration.service;
 
 import dev.dong4j.zeka.kernel.test.ZekaTest;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.form.UserQuery;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

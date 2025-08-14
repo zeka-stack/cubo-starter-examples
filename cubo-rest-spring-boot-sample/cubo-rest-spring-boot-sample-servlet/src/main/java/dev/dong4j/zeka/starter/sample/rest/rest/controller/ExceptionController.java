@@ -6,7 +6,7 @@ import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.form.LoginForm;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
 import dev.dong4j.zeka.starter.sample.rest.rest.service.ExceptionService;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.web.bind.annotation.GetMapping;

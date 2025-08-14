@@ -2,9 +2,9 @@ package dev.dong4j.zeka.starter.sample.mybatis.tenant.field.handler;
 
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantHandler;
 import dev.dong4j.zeka.starter.sample.mybatis.tenant.field.config.MyContext;
+import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;

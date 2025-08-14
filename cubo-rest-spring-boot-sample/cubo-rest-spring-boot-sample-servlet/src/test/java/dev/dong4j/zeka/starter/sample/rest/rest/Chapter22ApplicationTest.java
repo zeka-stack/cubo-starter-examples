@@ -1,7 +1,7 @@
 package dev.dong4j.zeka.starter.sample.rest.rest;
 
 import dev.dong4j.zeka.starter.sample.rest.SampleRestApplicationTest;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;

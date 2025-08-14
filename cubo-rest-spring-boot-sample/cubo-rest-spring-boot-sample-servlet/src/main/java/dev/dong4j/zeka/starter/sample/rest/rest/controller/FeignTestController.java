@@ -4,7 +4,7 @@ import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.kernel.common.util.JsonUtils;
 import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.form.LoginForm;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

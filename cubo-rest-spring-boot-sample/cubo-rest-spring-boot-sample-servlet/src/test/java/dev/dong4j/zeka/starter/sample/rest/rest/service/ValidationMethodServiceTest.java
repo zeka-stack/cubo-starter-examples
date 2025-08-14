@@ -2,8 +2,8 @@ package dev.dong4j.zeka.starter.sample.rest.rest.service;
 
 import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.form.TestForm;
-import javax.annotation.Resource;
-import javax.validation.ValidationException;
+import jakarta.annotation.Resource;
+import jakarta.validation.ValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

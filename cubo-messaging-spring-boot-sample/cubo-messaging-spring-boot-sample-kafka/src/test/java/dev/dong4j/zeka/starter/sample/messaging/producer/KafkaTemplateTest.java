@@ -8,7 +8,7 @@ import dev.dong4j.zeka.starter.sample.messaging.Order;
 import dev.dong4j.zeka.starter.sample.messaging.Payment;
 import dev.dong4j.zeka.starter.sample.messaging.SampleKafkaApplicationTest;
 import java.util.List;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.junit.jupiter.api.BeforeEach;

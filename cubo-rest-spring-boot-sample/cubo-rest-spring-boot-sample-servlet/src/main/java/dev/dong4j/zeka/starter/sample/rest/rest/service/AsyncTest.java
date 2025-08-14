@@ -1,6 +1,6 @@
 package dev.dong4j.zeka.starter.sample.rest.rest.service;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.Async;

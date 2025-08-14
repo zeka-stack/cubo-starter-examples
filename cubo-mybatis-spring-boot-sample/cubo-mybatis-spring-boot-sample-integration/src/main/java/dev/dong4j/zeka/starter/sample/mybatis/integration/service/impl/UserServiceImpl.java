@@ -8,7 +8,7 @@ import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.GenderEnum;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStateEnum;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.service.RuleService;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.service.UserService;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

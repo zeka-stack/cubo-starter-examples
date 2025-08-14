@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.rest.rest.service;
 
 import dev.dong4j.zeka.kernel.validation.util.ValidatorUtils;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.form.TestForm;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.stereotype.Service;

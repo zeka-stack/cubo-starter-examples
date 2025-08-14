@@ -1,8 +1,8 @@
 package dev.dong4j.zeka.starter.sample.rest.validation.vo;
 
 import dev.dong4j.zeka.kernel.common.base.BaseVO;
+import jakarta.validation.constraints.NotEmpty;
 import java.util.List;
-import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

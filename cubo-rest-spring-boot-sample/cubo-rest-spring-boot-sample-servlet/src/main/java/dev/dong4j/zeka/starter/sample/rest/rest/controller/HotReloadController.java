@@ -4,7 +4,7 @@ import dev.dong4j.zeka.kernel.common.constant.ConfigKey;
 import dev.dong4j.zeka.kernel.common.util.ThreadUtils;
 import dev.dong4j.zeka.kernel.common.util.Tools;
 import dev.dong4j.zeka.starter.rest.ServletController;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;

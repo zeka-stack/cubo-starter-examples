@@ -2,9 +2,9 @@ package dev.dong4j.zeka.starter.sample.rest.rest.entity.form;
 
 import dev.dong4j.zeka.kernel.validation.constraints.Phone;
 import io.swagger.annotations.ApiModel;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import java.io.Serializable;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

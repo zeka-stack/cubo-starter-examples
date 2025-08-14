@@ -1,7 +1,7 @@
 package dev.dong4j.zeka.starter.sample.rest.validation.validation;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 import org.jetbrains.annotations.NotNull;
 
 /**

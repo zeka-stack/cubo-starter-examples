@@ -5,7 +5,7 @@ import dev.dong4j.zeka.kernel.test.ZekaTest;
 import dev.dong4j.zeka.starter.mybatis.autoconfigure.MybatisAutoConfiguration;
 import dev.dong4j.zeka.starter.mybatis.autoconfigure.MybatisProperties;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.service.UserService;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

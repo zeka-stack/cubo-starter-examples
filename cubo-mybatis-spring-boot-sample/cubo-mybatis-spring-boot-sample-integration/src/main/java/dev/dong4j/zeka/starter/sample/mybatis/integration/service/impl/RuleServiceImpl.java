@@ -9,7 +9,7 @@ import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.po.Rule;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.DispatchModeEnum;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.MatchModeEnum;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.service.RuleService;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

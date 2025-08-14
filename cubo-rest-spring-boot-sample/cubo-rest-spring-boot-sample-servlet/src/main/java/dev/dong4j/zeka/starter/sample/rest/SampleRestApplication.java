@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.rest;
 
 import dev.dong4j.zeka.starter.launcher.ZekaStarter;
 import dev.dong4j.zeka.starter.sample.rest.rest.service.AsyncTest;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
