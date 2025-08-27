@@ -6,10 +6,7 @@ import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.rest.annotation.RestControllerWrapper;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.form.UserForm;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -17,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,12 +43,8 @@ public class UserController extends ServletController {
      * @since 1.0.0
      */
     @GetMapping("/{id}")
-    @ApiOperation(value = "获取用户详情", notes = "xxx", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiResponses(value = {
-        @ApiResponse(code = 2000, message = "操作成功", response = R.class),
-        @ApiResponse(code = 6000, message = "参数校验失败", response = R.class),
-        @ApiResponse(code = 4000, message = "用户不存在", response = R.class)
-    })
+    @Operation(summary = "获取用户详情")
+
     public Result<User> findById(@Valid @NotNull @PathVariable("id") Long id) {
         return this.ok(User.builder().id(id).name("dong4j").build());
     }
@@ -66,9 +58,9 @@ public class UserController extends ServletController {
      * @since 1.0.0
      */
     @GetMapping("/users")
-    @ApiOperation(value = "用户列表", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Result<List<User>> list(@ApiParam("查看第几页") @RequestParam(value = "pageIndex", required = false) Integer pageIndex,
-                                   @ApiParam("每页多少条") @RequestParam(value = "pageSize", required = false) Integer pageSize) {
+    @Operation(summary = "用户列表")
+    public Result<List<User>> list(Integer pageIndex,
+                                   Integer pageSize) {
         List<User> result = new ArrayList<>();
         result.add(User.builder().age(null).name(null).email("arraydsj@163.com").date(new Date()).build());
         result.add(User.builder().age(null).name(null).email("arraydsj@163.com").date(new Date()).build());
@@ -83,7 +75,7 @@ public class UserController extends ServletController {
      * @since 1.0.0
      */
     @PostMapping
-    @ApiOperation(value = "创建新用户", notes = "传入一个 User 实体", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "创建新用户")
     public Result<Void> save(@Valid @RequestBody UserForm user) {
         return this.ok();
     }
@@ -96,7 +88,7 @@ public class UserController extends ServletController {
      * @since 1.0.0
      */
     @PutMapping
-    @ApiOperation(value = "修改用户信息", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "修改用户信息")
     public Result<String> update(@Valid @RequestBody UserForm user) {
         return R.succeed();
     }
@@ -109,7 +101,7 @@ public class UserController extends ServletController {
      * @since 1.0.0
      */
     @DeleteMapping("/{id}")
-    @ApiOperation(value = "删除用户", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "删除用户")
     public Result<String> deleteById(@Valid @NotNull @Size(min = 1) @PathVariable("id") Long id) {
         return R.succeed("delete user : " + id);
     }
@@ -128,14 +120,14 @@ public class UserController extends ServletController {
      * @since 1.4.0
      */
     @DeleteMapping("/json")
-    @ApiOperation(value = "删除多个用户", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "删除多个用户")
     public Result<String> deleteByIds1(@RequestBody List<Long> ids) {
         return R.succeed("delete user : " + ids);
     }
 
     /**
      * form 表单接收 list
-     * DELETE http://127.0.0.1:18767/users/form
+     * DELETE <a href="http://127.0.0.1:18767/users/form">...</a>
      * Content-Type: application/x-www-form-urlencoded
      * <p>
      * id=1&id=2&id=3
@@ -145,7 +137,7 @@ public class UserController extends ServletController {
      * @since 1.4.0
      */
     @DeleteMapping("/form")
-    @ApiOperation(value = "删除多个用户", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "删除多个用户")
     public Result<String> deleteByIds2(@RequestParam(value = "id", required = false) List<Long> id) {
         return R.succeed("delete user : " + id);
     }

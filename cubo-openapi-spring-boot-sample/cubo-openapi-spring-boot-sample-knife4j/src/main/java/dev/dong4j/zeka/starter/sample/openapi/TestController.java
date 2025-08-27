@@ -1,32 +1,28 @@
 package dev.dong4j.zeka.starter.sample.openapi;
 
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import dev.dong4j.zeka.kernel.common.api.R;
 import dev.dong4j.zeka.kernel.common.api.Result;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.util.Date;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import validation.Valid;
 
 /**
  * <p>Description: </p>
@@ -37,7 +33,7 @@ import validation.Valid;
  * @date 2020.01.27 18:19
  * @since 1.4.0
  */
-@Api(tags = "swagger test api")
+@Tag(name = "swagger test api")
 @RestController
 public class TestController {
     /**
@@ -48,12 +44,8 @@ public class TestController {
      * @since 1.4.0
      */
     @GetMapping("/user/{id}")
-    @ApiOperation(value = "获取用户详情", notes = "xxx", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiResponses({
-        @ApiResponse(code = 2000, message = "操作成功", response = R.class),
-        @ApiResponse(code = 6000, message = "参数校验失败", response = R.class),
-        @ApiResponse(code = 4000, message = "用户不存在", response = R.class)
-    })
+    @Operation(summary = "获取用户详情")
+    @ApiOperationSupport(order = 1)
     public Result<Void> findById(@Valid @NotNull @Size(min = 1) @PathVariable("id") Long id) {
         return R.succeed();
     }
@@ -66,7 +58,8 @@ public class TestController {
      * @since 1.4.0
      */
     @PostMapping("/user")
-    @ApiOperation(value = "创建新用户", notes = "传入一个 User 实体", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "创建新用户")
+    @ApiOperationSupport(order = 2)
     public Result<Void> save(@Valid @RequestBody User user) {
         return R.succeed();
     }
@@ -79,7 +72,8 @@ public class TestController {
      * @since 1.4.0
      */
     @PutMapping("/user")
-    @ApiOperation(value = "修改用户信息", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "修改用户信息")
+    @ApiOperationSupport(order = 3)
     public Result<String> update(@Valid @RequestBody User user) {
         return R.succeed();
     }
@@ -92,7 +86,8 @@ public class TestController {
      * @since 1.4.0
      */
     @DeleteMapping("/user/{id}")
-    @ApiOperation(value = "删除用户", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "删除用户")
+    @ApiOperationSupport(order = 4)
     public Result<String> deleteById(@Valid @NotNull @Size(min = 1) @PathVariable("id") Long id) {
         return R.succeed("delete user : " + id);
     }
@@ -106,9 +101,10 @@ public class TestController {
      * @since 1.4.0
      */
     @GetMapping("/user")
-    @ApiOperation(value = "用户列表", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Result<Void> list(@ApiParam("查看第几页") @RequestParam(value = "pageIndex", required = false) Integer pageIndex,
-                             @ApiParam("每页多少条") @RequestParam(value = "pageSize", required = false) Integer pageSize) {
+    @Operation(summary = "用户列表")
+    @ApiOperationSupport(order = 5)
+    public Result<Void> list(Integer pageIndex,
+                             Integer pageSize) {
         return R.succeed();
     }
 

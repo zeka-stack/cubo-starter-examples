@@ -5,7 +5,7 @@ import dev.dong4j.zeka.kernel.common.base.AbstractBaseEntity;
 import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.rest.annotation.RestControllerWrapper;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.TestEntity;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SuppressWarnings("all")
 @RestControllerWrapper("/big-long")
-@Api(value = "大于 9007199254740991 long 转换为 String", tags = "big-long-test")
+@Tag(name = "大于 9007199254740991 long 转换为 String")
 public class BigLongController extends ServletController {
 
     /**

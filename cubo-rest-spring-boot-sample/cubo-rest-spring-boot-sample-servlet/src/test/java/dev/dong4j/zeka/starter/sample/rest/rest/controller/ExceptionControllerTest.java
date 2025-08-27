@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import dev.dong4j.zeka.kernel.common.api.BaseCodes;
 import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.kernel.common.util.Jsons;
-import dev.dong4j.zeka.kernel.common.util.ResultCodeUtils;
 import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
 import org.junit.jupiter.api.Assertions;
@@ -96,7 +95,7 @@ class ExceptionControllerTest extends Chapter22ApplicationTest {
         Result<User> result = Jsons.parse(json, new TypeReference<Result<User>>() {
         });
 
-        Assertions.assertEquals(ResultCodeUtils.generateCode(BaseCodes.PARAM_VERIFY_ERROR), result.getCode());
+        Assertions.assertEquals(BaseCodes.PARAM_VERIFY_ERROR, result.getCode());
     }
 
     /**

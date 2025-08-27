@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.mybatis.integration.service.impl;
 
 import dev.dong4j.zeka.kernel.common.enums.DeletedEnum;
 import dev.dong4j.zeka.kernel.common.enums.EnabledEnum;
-import dev.dong4j.zeka.kernel.common.exception.BaseException;
+import dev.dong4j.zeka.kernel.common.exception.LowestException;
 import dev.dong4j.zeka.starter.mybatis.service.impl.BaseServiceImpl;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.dao.RuleDao;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.po.Rule;
@@ -48,6 +48,6 @@ public class RuleServiceImpl extends BaseServiceImpl<RuleDao, Rule> implements R
         rule.setDeleted(DeletedEnum.Y);
         this.ruleDao.insert(rule);
 
-        throw new BaseException();
+        throw new LowestException();
     }
 }

@@ -1,7 +1,6 @@
 package dev.dong4j.zeka.starter.sample.rest.rest.entity.po;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,23 +20,24 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ApiModel(description = "用户基本信息")
+@Schema(name = "用户基本信息")
 public class User {
     /** Id */
-    @ApiModelProperty(value = "用户 ID", dataType = "Long")
+    @Schema(description = "用户 ID")
     private Long id;
     /** Name */
-    @ApiModelProperty("姓名")
+    @Schema(defaultValue = "姓名")
     private String name;
     /** Age */
-    @ApiModelProperty("年龄")
+    @Schema(defaultValue = "年龄")
     private Integer age;
     /** Address */
-    @ApiModelProperty("地址")
+    @Schema(defaultValue = "地址")
     private String address;
     /** Email */
-    @ApiModelProperty("邮箱")
+    @Schema(defaultValue = "邮箱")
     private String email;
     /** Date */
+    @Schema(defaultValue = "创建时间")
     private Date date;
 }

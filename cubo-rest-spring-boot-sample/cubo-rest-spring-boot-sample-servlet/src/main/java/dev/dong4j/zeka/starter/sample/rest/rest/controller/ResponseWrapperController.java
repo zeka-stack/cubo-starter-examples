@@ -1,7 +1,7 @@
 package dev.dong4j.zeka.starter.sample.rest.rest.controller;
 
 import dev.dong4j.zeka.kernel.common.api.Result;
-import dev.dong4j.zeka.kernel.common.exception.BaseException;
+import dev.dong4j.zeka.kernel.common.exception.LowestException;
 import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.rest.annotation.ResponseWrapper;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
@@ -59,7 +59,7 @@ public class ResponseWrapperController extends ServletController {
      */
     @GetMapping("/exception")
     public User test3() {
-        throw new BaseException("异常测试");
+        throw new LowestException("异常测试");
     }
 
     /**

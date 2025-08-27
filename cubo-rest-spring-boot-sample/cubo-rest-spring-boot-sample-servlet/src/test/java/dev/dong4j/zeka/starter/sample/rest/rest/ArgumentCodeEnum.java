@@ -1,6 +1,6 @@
 package dev.dong4j.zeka.starter.sample.rest.rest;
 
-import dev.dong4j.zeka.kernel.common.assertion.BaseExceptionAssert;
+import dev.dong4j.zeka.kernel.common.assertion.LowestExceptionAssert;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -15,7 +15,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum ArgumentCodeEnum implements BaseExceptionAssert {
+public enum ArgumentCodeEnum implements LowestExceptionAssert {
     /** 手机号格式错误 */
     PARAM_VERIFY_ERROR(6001, "[{}] 不能为空"),
     /** Bad xxx type argument code enum */

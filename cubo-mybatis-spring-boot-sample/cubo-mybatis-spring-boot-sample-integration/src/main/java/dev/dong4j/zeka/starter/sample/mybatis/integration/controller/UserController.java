@@ -10,9 +10,8 @@ import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.form.UserQuery;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.entity.vo.UserVO;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.service.UserService;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.wrapper.UserViewConverter;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 @AllArgsConstructor
 @RestControllerWrapper
-@Api(tags = "用户信息表接口")
+@Tag(name = "用户信息表接口")
 public class UserController extends ServletController {
     /** User service */
     private final UserService userService;
@@ -43,7 +42,7 @@ public class UserController extends ServletController {
      * @since 1.6.0
      */
     @GetMapping("/users/page_1")
-    @ApiOperation(value = "用户分页查询实现方式 1")
+    @Operation(summary = "用户分页查询实现方式 1")
     public IPage<UserVO> pages1(UserQuery query) {
         IPage<UserDTO> page = this.userService.page(query);
         return page.convert(UserViewConverter.INSTANCE::vo);
@@ -57,7 +56,7 @@ public class UserController extends ServletController {
      * @since 1.6.0
      */
     @GetMapping("/users/page_2")
-    @ApiOperation(value = "用户分页查询实现方式 2")
+    @Operation(summary = "用户分页查询实现方式 2")
     public IPage<UserVO> pages2(UserQuery query) {
         IPage<UserDTO> page = this.userService.page(query);
         return UserViewConverter.INSTANCE.vo(page);
@@ -71,7 +70,7 @@ public class UserController extends ServletController {
      * @since 1.6.0
      */
     @GetMapping("/users/list")
-    @ApiOperation(value = "获取所有用户集合")
+    @Operation(summary = "获取所有用户集合")
     public List<UserVO> list(UserQuery query) {
         List<UserDTO> list = this.userService.list(query);
         return UserViewConverter.INSTANCE.vo(list);
@@ -85,8 +84,8 @@ public class UserController extends ServletController {
      * @since 1.6.0
      */
     @DeleteMapping("/users")
-    @ApiOperation(value = "批量删除")
-    public Result<Void> remove(@ApiParam(value = "主键集合", required = true) @RequestBody List<Long> ids) {
+    @Operation(summary = "批量删除")
+    public Result<Void> remove(@RequestBody List<Long> ids) {
         return this.userService.removeByIds(ids) ? this.ok() : this.fail("批量删除失败");
     }
 

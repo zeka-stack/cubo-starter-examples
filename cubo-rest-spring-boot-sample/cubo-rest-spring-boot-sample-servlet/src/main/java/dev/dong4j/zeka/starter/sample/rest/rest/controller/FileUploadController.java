@@ -4,8 +4,8 @@ import dev.dong4j.zeka.kernel.common.api.R;
 import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.kernel.common.util.StringUtils;
 import dev.dong4j.zeka.starter.rest.ServletController;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +32,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Slf4j
 @RestController
-@Api(tags = "文件上传")
+@Tag(name = "文件上传")
 public class FileUploadController extends ServletController {
 
     /**
@@ -42,7 +42,7 @@ public class FileUploadController extends ServletController {
      * @return the string
      * @since 1.6.0
      */
-    @ApiOperation(value = "文件上传测试", notes = "xxx")
+    @Operation(summary = "文件上传测试", description = "xxx")
     @PostMapping("upload")
     public Result<String> upload(@RequestParam("file") @NotNull MultipartFile file) {
         if (file.isEmpty()) {
