@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.mybatis.single;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import dev.dong4j.zeka.kernel.common.context.SpringContext;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.launcher.ZekaStarter;
 import dev.dong4j.zeka.starter.sample.mybatis.single.dao.UserDao;
 import dev.dong4j.zeka.starter.sample.mybatis.single.entity.dto.UserDTO;
@@ -35,9 +35,9 @@ public class SampleMybatisSingleApplication extends ZekaStarter {
         UserDao userMapper = SpringContext.getInstance(UserDao.class);
 
         User user = userMapper.selectById(1);
-        log.info("{}", JsonUtils.toJson(user));
+        log.info("{}", Jsons.toJson(user));
 
         userMapper.insert(UserWrapper.INSTANCE.po(UserDTO.builder().age(1).email("xxx").name("dong4j").build()));
-        log.info("{}", JsonUtils.toJson(userMapper.selectList(new QueryWrapper<>())));
+        log.info("{}", Jsons.toJson(userMapper.selectList(new QueryWrapper<>())));
     }
 }

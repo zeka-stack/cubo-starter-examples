@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.rest.rest.controller;
 
 import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.kernel.common.constant.BasicConstant;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -54,7 +54,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
         MvcResult mvcResult = this.getMvcResult("/wrapper/test2");
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<?> result = JsonUtils.parse(json, Result.class);
+        Result<?> result = Jsons.parse(json, Result.class);
 
         Assertions.assertEquals("<script></script>", ((Map<?, ?>) result.getData()).get(BasicConstant.RESULT_WRAPPER_VALUE_KEY));
         Assertions.assertNotNull(mvcResult.getResponse().getContentType());
@@ -106,7 +106,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
         MvcResult mvcResult = this.getMvcResult("/wrapper/test5");
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<?> result = JsonUtils.parse(json, Result.class);
+        Result<?> result = Jsons.parse(json, Result.class);
 
         Assertions.assertEquals("<script></script>", ((Map<?, ?>) result.getData()).get(BasicConstant.RESULT_WRAPPER_VALUE_KEY));
         Assertions.assertNotNull(mvcResult.getResponse().getContentType());
@@ -141,7 +141,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
         MvcResult mvcResult = this.getMvcResult("/wrapper/test7");
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<?> result = JsonUtils.parse(json, Result.class);
+        Result<?> result = Jsons.parse(json, Result.class);
 
         Assertions.assertEquals("<script></script>", ((Map<?, ?>) result.getData()).get(BasicConstant.RESULT_WRAPPER_VALUE_KEY));
         Assertions.assertNotNull(mvcResult.getResponse().getContentType());

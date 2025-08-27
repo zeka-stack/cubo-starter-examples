@@ -6,7 +6,7 @@ import dev.dong4j.zeka.kernel.common.api.BaseCodes;
 import dev.dong4j.zeka.kernel.common.api.IResultCode;
 import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.kernel.common.enums.ServletCodeEnum;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
 import java.math.BigDecimal;
@@ -199,7 +199,7 @@ public class ResutController extends ServletController {
      */
     @GetMapping("/result_json_1")
     public Result<JsonNode> jsonNodeResult() {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("username", "dong4j");
         return this.ok(objectNode);
     }
@@ -212,7 +212,7 @@ public class ResutController extends ServletController {
      */
     @GetMapping("/result_json_2")
     public Result<ObjectNode> objectNodeResult() {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("username", "dong4j");
         return this.ok(objectNode);
     }

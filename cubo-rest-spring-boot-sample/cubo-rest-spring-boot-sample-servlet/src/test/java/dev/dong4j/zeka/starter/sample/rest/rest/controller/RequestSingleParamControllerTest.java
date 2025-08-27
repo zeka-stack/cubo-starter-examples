@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import dev.dong4j.zeka.kernel.common.api.BaseCodes;
 import dev.dong4j.zeka.kernel.common.api.Result;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.enums.UserStatusEnum;
 import lombok.extern.slf4j.Slf4j;
@@ -40,9 +40,9 @@ class RequestSingleParamControllerTest extends Chapter22ApplicationTest {
      */
     @Test
     void test_param_1() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("status", 5);
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders
                 .get("/param/1")
@@ -70,10 +70,10 @@ class RequestSingleParamControllerTest extends Chapter22ApplicationTest {
      */
     @Test
     void test_param_2_value() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("status", 5);
         objectNode.put("name", "dong4j");
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.POST, "/param/2", UserStatusEnum.CHECK_FAILED);
     }
@@ -87,10 +87,10 @@ class RequestSingleParamControllerTest extends Chapter22ApplicationTest {
      */
     @Test
     void test_param_2_name() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("status", "CHECK_FAILED");
         objectNode.put("name", "dong4j");
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.POST, "/param/2", UserStatusEnum.CHECK_FAILED);
     }
@@ -104,10 +104,10 @@ class RequestSingleParamControllerTest extends Chapter22ApplicationTest {
      */
     @Test
     void test_param_2_ordinal() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("status", 2);
         objectNode.put("name", "dong4j");
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.POST, "/param/2", null);
     }
@@ -145,7 +145,7 @@ class RequestSingleParamControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<UserStatusEnum> result = JsonUtils.parse(json, new TypeReference<Result<UserStatusEnum>>() {
+        Result<UserStatusEnum> result = Jsons.parse(json, new TypeReference<Result<UserStatusEnum>>() {
         });
 
         Assertions.assertEquals(statusEnum, result.getData());

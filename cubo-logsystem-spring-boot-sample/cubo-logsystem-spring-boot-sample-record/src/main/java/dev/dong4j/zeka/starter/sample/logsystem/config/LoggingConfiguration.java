@@ -10,7 +10,7 @@ import dev.dong4j.zeka.starter.sample.logsystem.service.ApiLogStorageService;
 import dev.dong4j.zeka.starter.sample.logsystem.service.ErrorLogStorageService;
 import dev.dong4j.zeka.starter.sample.logsystem.service.SystemLogStorageService;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 
 /**
  * <p>Description:  </p>
@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2019.11.21 14:06
  * @since 1.0.0
  */
-@Configuration
+@AutoConfiguration
 public class LoggingConfiguration {
 
     /**

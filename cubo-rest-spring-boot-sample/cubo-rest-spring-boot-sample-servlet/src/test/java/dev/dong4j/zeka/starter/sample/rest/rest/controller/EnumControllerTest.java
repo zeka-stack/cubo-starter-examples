@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import dev.dong4j.zeka.kernel.common.api.BaseCodes;
 import dev.dong4j.zeka.kernel.common.api.Result;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.enums.UserStatusEnum;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.EnumEntity;
@@ -55,7 +55,7 @@ class EnumControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<EnumEntity> result = JsonUtils.parse(json, new TypeReference<Result<EnumEntity>>() {
+        Result<EnumEntity> result = Jsons.parse(json, new TypeReference<Result<EnumEntity>>() {
         });
 
         Assertions.assertEquals("dong4j", result.getData().getName());
@@ -106,7 +106,7 @@ class EnumControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<EnumEntity> result = JsonUtils.parse(json, new TypeReference<Result<EnumEntity>>() {
+        Result<EnumEntity> result = Jsons.parse(json, new TypeReference<Result<EnumEntity>>() {
         });
 
         Assertions.assertEquals("dong4j", result.getData().getName());
@@ -125,9 +125,9 @@ class EnumControllerTest extends Chapter22ApplicationTest {
     @Test
     @Order(4)
     void test_convert_2_post_value() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("value", 5);
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.POST, "/enum/convert_2", UserStatusEnum.CHECK_FAILED);
     }
@@ -142,9 +142,9 @@ class EnumControllerTest extends Chapter22ApplicationTest {
     @Test
     @Order(5)
     void test_convert_2_post_name() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("value", "CHECK_FAILED");
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.POST, "/enum/convert_2", UserStatusEnum.CHECK_FAILED);
     }
@@ -159,10 +159,10 @@ class EnumControllerTest extends Chapter22ApplicationTest {
     @Test
     @Order(6)
     void test_convert_2_post_ordinal() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         // 下标为 2 的枚举
         objectNode.put("value", 2);
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.POST, "/enum/convert_2", null);
     }
@@ -177,9 +177,9 @@ class EnumControllerTest extends Chapter22ApplicationTest {
     @Test
     @Order(7)
     void test_convert_2_put_value() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("value", 5);
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.PUT, "/enum/convert_2", UserStatusEnum.CHECK_FAILED);
     }
@@ -194,9 +194,9 @@ class EnumControllerTest extends Chapter22ApplicationTest {
     @Test
     @Order(8)
     void test_convert_2_put_name() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("value", "CHECK_FAILED");
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.PUT, "/enum/convert_2", UserStatusEnum.CHECK_FAILED);
     }
@@ -211,10 +211,10 @@ class EnumControllerTest extends Chapter22ApplicationTest {
     @Test
     @Order(9)
     void test_convert_2_put_ordinal() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         // 下标为 2 的枚举
         objectNode.put("value", 2);
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         this.invoke(body, HttpMethod.PUT, "/enum/convert_2", null);
     }
@@ -319,7 +319,7 @@ class EnumControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<EnumEntity> result = JsonUtils.parse(json, new TypeReference<Result<EnumEntity>>() {
+        Result<EnumEntity> result = Jsons.parse(json, new TypeReference<Result<EnumEntity>>() {
         });
 
         Assertions.assertEquals("dong4j", result.getData().getName());
@@ -357,7 +357,7 @@ class EnumControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<UserStatusEnum> result = JsonUtils.parse(json, new TypeReference<Result<UserStatusEnum>>() {
+        Result<UserStatusEnum> result = Jsons.parse(json, new TypeReference<Result<UserStatusEnum>>() {
         });
 
         Assertions.assertEquals(statusEnum, result.getData());

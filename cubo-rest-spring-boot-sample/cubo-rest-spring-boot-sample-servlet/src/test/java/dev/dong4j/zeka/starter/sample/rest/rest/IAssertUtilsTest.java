@@ -1,6 +1,6 @@
 package dev.dong4j.zeka.starter.sample.rest.rest;
 
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.form.LoginForm;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
@@ -68,7 +68,7 @@ class IAssertUtilsTest {
         String json = "{\"username\":\"demoData\",\"password\":\"demoData\",\"code\":\"demoData\",\"uuid\":\"demoData\"}";
 
         // 使用 JsonUtils 反序列化
-        LoginForm parse = JsonUtils.parse(json, LoginForm.class);
+        LoginForm parse = Jsons.parse(json, LoginForm.class);
 
         // 可选：添加断言验证字段值是否正确
         Assertions.assertEquals("demoData", parse.getUsername());

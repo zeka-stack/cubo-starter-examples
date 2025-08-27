@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.launcher.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.Resource;
@@ -19,7 +19,7 @@ import java.util.Map;
  * @since 1.0.0
  */
 @Data
-@Configuration
+@AutoConfiguration
 @ConfigurationProperties(prefix = "zeka-stack.app.custom")
 public class CustomConfig {
 

@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.rest.rest.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import dev.dong4j.zeka.kernel.common.api.Result;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
 import lombok.extern.slf4j.Slf4j;
@@ -43,7 +43,7 @@ class ServletControllerWrapperControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<User> result = JsonUtils.parse(json, new TypeReference<Result<User>>() {
+        Result<User> result = Jsons.parse(json, new TypeReference<Result<User>>() {
         });
 
         Assertions.assertEquals("dong4j", result.getData().getName());
@@ -67,7 +67,7 @@ class ServletControllerWrapperControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<User> result = JsonUtils.parse(json, new TypeReference<Result<User>>() {
+        Result<User> result = Jsons.parse(json, new TypeReference<Result<User>>() {
         });
 
         Assertions.assertEquals("dong4j", result.getData().getName());
@@ -91,7 +91,7 @@ class ServletControllerWrapperControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<?> result = JsonUtils.parse(json, Result.class);
+        Result<?> result = Jsons.parse(json, Result.class);
 
         Assertions.assertTrue(result.isFail());
     }
@@ -114,7 +114,7 @@ class ServletControllerWrapperControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<?> result = JsonUtils.parse(json, Result.class);
+        Result<?> result = Jsons.parse(json, Result.class);
 
         Assertions.assertEquals("2000", result.getCode());
     }

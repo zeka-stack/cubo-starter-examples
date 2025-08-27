@@ -1,7 +1,7 @@
 package dev.dong4j.zeka.starter.sample.rest.rest.controller;
 
 import dev.dong4j.zeka.kernel.common.api.Result;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.form.LoginForm;
 import jakarta.servlet.http.HttpServletRequest;
@@ -75,7 +75,7 @@ public class FeignTestController extends ServletController {
      */
     @PostMapping(value = "/post/json/entity", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Result<String> postJsonToEntityTest(HttpServletRequest request, @RequestBody LoginForm loginForm) {
-        return this.ok("post:" + JsonUtils.toJson(loginForm));
+        return this.ok("post:" + Jsons.toJson(loginForm));
     }
 
     /**
@@ -96,7 +96,7 @@ public class FeignTestController extends ServletController {
                                               @RequestParam("password") String password,
                                               @RequestParam("code") String code,
                                               @RequestParam("uuid") String uuid) {
-        return this.ok("post:" + JsonUtils.toJson(LoginForm.builder()
+        return this.ok("post:" + Jsons.toJson(LoginForm.builder()
             .username(username)
             .password(password)
             .code(code)
@@ -115,7 +115,7 @@ public class FeignTestController extends ServletController {
      */
     @PostMapping(value = "/post/form/entity", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Result<String> postFormDataToEntityTest(HttpServletRequest request, LoginForm loginForm) {
-        return this.ok("post:" + JsonUtils.toJson(loginForm));
+        return this.ok("post:" + Jsons.toJson(loginForm));
     }
 
     /**
@@ -136,7 +136,7 @@ public class FeignTestController extends ServletController {
                                                   @RequestParam("password") String password,
                                                   @RequestParam("code") String code,
                                                   @RequestParam("uuid") String uuid) {
-        return this.ok("post:" + JsonUtils.toJson(LoginForm.builder()
+        return this.ok("post:" + Jsons.toJson(LoginForm.builder()
             .username(username)
             .password(password)
             .code(code)
@@ -156,7 +156,7 @@ public class FeignTestController extends ServletController {
      */
     @PostMapping(value = "/post/form/encoded/entity", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public Result<String> postFormUrlencodedDataToEntityTest(HttpServletRequest request, LoginForm loginForm, String param) {
-        return this.ok("post: " + param + JsonUtils.toJson(loginForm));
+        return this.ok("post: " + param + Jsons.toJson(loginForm));
     }
 
     /**
@@ -177,7 +177,7 @@ public class FeignTestController extends ServletController {
                                                             @RequestParam("password") String password,
                                                             @RequestParam("code") String code,
                                                             @RequestParam("uuid") String uuid) {
-        return this.ok("post:" + JsonUtils.toJson(LoginForm.builder()
+        return this.ok("post:" + Jsons.toJson(LoginForm.builder()
             .username(username)
             .password(password)
             .code(code)
@@ -197,7 +197,7 @@ public class FeignTestController extends ServletController {
      */
     @PostMapping(value = "/post_1/form/encoded/entity", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public Result<String> postFormUrlencodedDataToEntityTest1(HttpServletRequest request, @RequestBody LoginForm loginForm) {
-        return this.ok("post: " + JsonUtils.toJson(loginForm));
+        return this.ok("post: " + Jsons.toJson(loginForm));
     }
 
     /**
@@ -220,7 +220,7 @@ public class FeignTestController extends ServletController {
                                                              @RequestParam("code") String code,
                                                              @RequestParam("param") String param,
                                                              @RequestParam("uuid") String uuid) {
-        return this.ok("post:" + JsonUtils.toJson(LoginForm.builder()
+        return this.ok("post:" + Jsons.toJson(LoginForm.builder()
             .username(username)
             .password(password)
             .code(code)
@@ -239,6 +239,6 @@ public class FeignTestController extends ServletController {
      */
     @PutMapping(value = "/put/form/encoded/entity", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public Result<String> putFormUrlencodedDataToEntityTest(HttpServletRequest request, @RequestBody LoginForm loginForm) {
-        return this.ok("post: " + JsonUtils.toJson(loginForm));
+        return this.ok("post: " + Jsons.toJson(loginForm));
     }
 }

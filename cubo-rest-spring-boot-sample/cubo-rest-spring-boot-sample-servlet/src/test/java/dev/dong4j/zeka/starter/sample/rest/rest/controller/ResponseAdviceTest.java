@@ -1,7 +1,7 @@
 package dev.dong4j.zeka.starter.sample.rest.rest.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +46,7 @@ public class ResponseAdviceTest extends Chapter22ApplicationTest {
 
         String json = mvcResult.getResponse().getContentAsString();
 
-        List<SwaggerResource> result = JsonUtils.parse(json, new TypeReference<List<SwaggerResource>>() {
+        List<SwaggerResource> result = Jsons.parse(json, new TypeReference<List<SwaggerResource>>() {
         });
 
         Assertions.assertNotNull(result);

@@ -3,7 +3,7 @@ package dev.dong4j.zeka.starter.sample.endpoint;
 import com.fasterxml.jackson.core.type.TypeReference;
 import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.kernel.common.util.Charsets;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.kernel.test.ZekaTest;
 import dev.dong4j.zeka.starter.endpoint.ProjectInfoEndpoint;
 import dev.dong4j.zeka.starter.endpoint.initialization.WarmUpEnum;
@@ -48,7 +48,7 @@ public class EndpointTest {
         String json = mvcResult.getResponse().getContentAsString();
 
         Result<List<ProjectInfoEndpoint.RequestToMethodItem>> result =
-            JsonUtils.parse(json, new TypeReference<Result<List<ProjectInfoEndpoint.RequestToMethodItem>>>() {
+            Jsons.parse(json, new TypeReference<Result<List<ProjectInfoEndpoint.RequestToMethodItem>>>() {
             });
 
         Assertions.assertNotNull(result);
@@ -58,7 +58,7 @@ public class EndpointTest {
     void testWarmup() throws Exception {
 
         MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders.post("/warmup")
-                .content(JsonUtils.toJson(WarmUpRequestDTO.builder()
+                .content(Jsons.toJson(WarmUpRequestDTO.builder()
                     .warmUpString("warm me up")
                     .warmUpNumber(15)
                     .warmUpBigDecimal(BigDecimal.TEN)
@@ -77,7 +77,7 @@ public class EndpointTest {
         String json = mvcResult.getResponse().getContentAsString();
 
         Result<WarmUpRequestDTO> result =
-            JsonUtils.parse(json, new TypeReference<Result<WarmUpRequestDTO>>() {
+            Jsons.parse(json, new TypeReference<Result<WarmUpRequestDTO>>() {
             });
 
         Assertions.assertNotNull(result);

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import dev.dong4j.zeka.kernel.common.api.BaseCodes;
 import dev.dong4j.zeka.kernel.common.api.Result;
-import dev.dong4j.zeka.kernel.common.util.JsonUtils;
+import dev.dong4j.zeka.kernel.common.util.Jsons;
 import dev.dong4j.zeka.kernel.common.util.ResultCodeUtils;
 import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
@@ -36,13 +36,13 @@ class ExceptionControllerTest extends Chapter22ApplicationTest {
      */
     @Test
     void test_exception_1() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("username", "dong4j");
         objectNode.put("password", "xxxxx");
         objectNode.put("phone", "18000000000");
         objectNode.put("code", "1234");
         objectNode.put("uuid", "4321");
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders
                 .post("/exception/test1")
@@ -57,7 +57,7 @@ class ExceptionControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<User> result = JsonUtils.parse(json, new TypeReference<Result<User>>() {
+        Result<User> result = Jsons.parse(json, new TypeReference<Result<User>>() {
         });
 
         Assertions.assertEquals("dong4j", result.getData().getName());
@@ -72,13 +72,13 @@ class ExceptionControllerTest extends Chapter22ApplicationTest {
      */
     @Test
     void test_exception_2() throws Exception {
-        ObjectNode objectNode = JsonUtils.getCopyMapper().createObjectNode();
+        ObjectNode objectNode = Jsons.getCopyMapper().createObjectNode();
         objectNode.put("username", "dong4j");
         objectNode.put("password", "xxxxx");
         objectNode.put("phone", "18000000000");
         objectNode.put("code", "");
         objectNode.put("uuid", "4321");
-        byte[] body = JsonUtils.toJsonAsBytes(objectNode);
+        byte[] body = Jsons.toJsonAsBytes(objectNode);
 
         MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders
                 .post("/exception/test1")
@@ -93,7 +93,7 @@ class ExceptionControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<User> result = JsonUtils.parse(json, new TypeReference<Result<User>>() {
+        Result<User> result = Jsons.parse(json, new TypeReference<Result<User>>() {
         });
 
         Assertions.assertEquals(ResultCodeUtils.generateCode(BaseCodes.PARAM_VERIFY_ERROR), result.getCode());
@@ -119,7 +119,7 @@ class ExceptionControllerTest extends Chapter22ApplicationTest {
             .andReturn();
 
         String json = mvcResult.getResponse().getContentAsString();
-        Result<User> result = JsonUtils.parse(json, new TypeReference<Result<User>>() {
+        Result<User> result = Jsons.parse(json, new TypeReference<Result<User>>() {
         });
 
         Assertions.assertNotEquals(2000, result.getCode());

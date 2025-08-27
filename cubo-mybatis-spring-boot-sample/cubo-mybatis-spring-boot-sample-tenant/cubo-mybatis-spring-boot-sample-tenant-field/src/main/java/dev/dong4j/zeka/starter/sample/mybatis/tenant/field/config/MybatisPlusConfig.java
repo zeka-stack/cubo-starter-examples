@@ -10,8 +10,8 @@ import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.ibatis.mapping.MappedStatement;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>Description: </p>
@@ -22,7 +22,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020.02.17 18:25
  * @since 1.0.0
  */
-@Configuration
+@AutoConfiguration
 public class MybatisPlusConfig {
 
     /** USER_LIST */

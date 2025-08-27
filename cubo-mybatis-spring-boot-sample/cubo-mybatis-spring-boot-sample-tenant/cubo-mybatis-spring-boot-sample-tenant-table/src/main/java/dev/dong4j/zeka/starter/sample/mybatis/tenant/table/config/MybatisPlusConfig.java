@@ -17,8 +17,8 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>Description: </p>
@@ -30,7 +30,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2018 -08-10
  */
 @Slf4j
-@Configuration
+@AutoConfiguration
 public class MybatisPlusConfig {
 
     /**
