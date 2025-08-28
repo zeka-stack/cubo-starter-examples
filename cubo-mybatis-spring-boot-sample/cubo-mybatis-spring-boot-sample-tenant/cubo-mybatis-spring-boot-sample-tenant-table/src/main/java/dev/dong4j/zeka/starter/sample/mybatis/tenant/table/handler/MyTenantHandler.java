@@ -1,7 +1,7 @@
-package dev.dong4j.zeka.starter.sample.mybatis.tenant.field.handler;
+package dev.dong4j.zeka.starter.sample.mybatis.tenant.table.handler;
 
 import com.baomidou.mybatisplus.extension.plugins.handler.TenantLineHandler;
-import dev.dong4j.zeka.starter.sample.mybatis.tenant.field.config.MyContext;
+import dev.dong4j.zeka.starter.sample.mybatis.tenant.table.config.MyContext;
 import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;

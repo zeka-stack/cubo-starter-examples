@@ -1,9 +1,10 @@
 package dev.dong4j.zeka.starter.sample.rest.rest.entity.form;
 
 import dev.dong4j.zeka.kernel.validation.constraints.Phone;
-import io.swagger.annotations.ApiModel;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import java.io.Serial;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,9 +24,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ApiModel(value = "LoginForm", description = "统一登录实体")
+@Tag(name = "LoginForm", description = "统一登录实体")
 public class LoginForm implements Serializable {
     /** serialVersionUID */
+    @Serial
     private static final long serialVersionUID = -2343233251882358359L;
     /** 用户名 */
     @NotBlank(message = "用户名不能为空")

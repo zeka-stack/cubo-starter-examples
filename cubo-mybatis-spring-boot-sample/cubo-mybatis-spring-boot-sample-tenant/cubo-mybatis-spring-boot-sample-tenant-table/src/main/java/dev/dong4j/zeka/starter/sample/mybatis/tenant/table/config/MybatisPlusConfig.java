@@ -6,16 +6,15 @@ import com.alibaba.druid.sql.ast.statement.SQLExprTableSource;
 import com.alibaba.druid.sql.dialect.mysql.parser.MySqlStatementParser;
 import com.alibaba.druid.sql.dialect.mysql.visitor.MySqlOutputVisitor;
 import com.alibaba.druid.sql.parser.SQLStatementParser;
-import com.baomidou.mybatisplus.extension.parsers.DynamicTableNameParser;
-import com.baomidou.mybatisplus.extension.parsers.ITableNameHandler;
-import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.BlockAttackInnerInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.TenantLineInnerInterceptor;
+import dev.dong4j.zeka.starter.sample.mybatis.tenant.table.handler.MyTenantHandler;
 import java.io.StringWriter;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Random;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.reflection.MetaObject;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -33,60 +32,19 @@ import org.springframework.context.annotation.Bean;
 @AutoConfiguration
 public class MybatisPlusConfig {
 
-    /**
-     * Pagination interceptor pagination interceptor
-     *
-     * @return the pagination interceptor
-     * @since 1.0.0
-     */
     @Bean
-    @SuppressWarnings(value = {"PMD.UndefineMagicConstantRule", "PMD.RemoveCommentedCodeRule"})
-    public PaginationInterceptor paginationInterceptor() {
+    public MybatisPlusInterceptor mybatisPlusInterceptor() {
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        // 多租户插件
+        interceptor.addInnerInterceptor(new TenantLineInnerInterceptor(new MyTenantHandler()));
 
-        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
-        DynamicTableNameParser dynamicTableNameParser = new DynamicTableNameParser();
-        dynamicTableNameParser.setTableNameHandlerMap(new HashMap<String, ITableNameHandler>(2) {
-            private static final long serialVersionUID = 4547149506400470382L;
+        // 针对 update 和 delete 语句 作用: 阻止恶意的全表更新删除
+        interceptor.addInnerInterceptor(new BlockAttackInnerInterceptor());
 
-            {
-                this.put("user", new ITableNameHandler() {
-                    // todo-dong4j : (2021-10-22 15:56) [新版本适配]
-                    // @Override
-                    // public String process(MetaObject metaObject, String sql, String tableName) {
-                    //     MappedStatement ms = SqlParserHelper.getMappedStatement(metaObject);
-                    //     StopWatch stopWatch = new StopWatch();
-                    //     stopWatch.start();
-                    //
-                    //     String dynamicTableName = this.dynamicTableName(metaObject, sql, tableName);
-                    //
-                    //     // 替换表名
-                    //     if (!dynamicTableName.equalsIgnoreCase(tableName)) {
-                    //         sql = changeTableNames(sql, tableName, dynamicTableName);
-                    //     }
-                    //
-                    //     stopWatch.stop();
-                    //     log.info("{}", stopWatch.getTotalTimeMillis());
-                    //     return sql;
-                    // }
+        // 分页插件
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
 
-                    @NotNull
-                    @Override
-                    public String dynamicTableName(MetaObject metaObject, String sql, String tableName) {
-                        // metaObject 可以获取传入参数,这里实现你自己的动态规则
-                        String year = "_2018";
-                        int random = new Random().nextInt(10);
-                        if (random % 2 == 1) {
-                            year = "_2019";
-                        }
-                        return "user" + year;
-                    }
-                });
-            }
-
-        });
-        paginationInterceptor.setSqlParserList(Collections.singletonList(dynamicTableNameParser));
-
-        return paginationInterceptor;
+        return interceptor;
     }
 
     /**

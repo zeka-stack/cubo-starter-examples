@@ -3,7 +3,7 @@ package dev.dong4j.zeka.starter.sample.rest.rest.controller;
 import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,13 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @Slf4j
-@Api(tags = "Xss 攻击测试")
+@Tag(name = "Xss 攻击测试")
 @Validated
 @RestController
 public class XssController extends ServletController {
 
     /**
-     * POST http://127.0.0.1:18080/xss?name=<script>alert('hello');</script>
+     * POST <a href="http://127.0.0.1:18080/xss?name=">...</a><script>alert('hello');</script>
      * <p>
      * 输出:
      * {
@@ -48,7 +48,7 @@ public class XssController extends ServletController {
     }
 
     /**
-     * POST http://127.0.0.1:18080/json
+     * POST <a href="http://127.0.0.1:18080/json">...</a>
      * Content-Type: application/json
      * <p>
      * {
@@ -85,7 +85,7 @@ public class XssController extends ServletController {
     }
 
     /**
-     * GET http://127.0.0.1:18080/query?q=<script>alert('hello');</script>
+     * GET <a href="http://127.0.0.1:18080/query?q=">...</a><script>alert('hello');</script>
      *
      * @param q q
      * @return the object

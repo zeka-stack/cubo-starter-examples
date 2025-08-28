@@ -3,7 +3,8 @@ package dev.dong4j.zeka.starter.sample.mybatis.integration.entity.form;
 import dev.dong4j.zeka.kernel.common.base.BaseQuery;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.GenderEnum;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.UserStateEnum;
-import io.swagger.annotations.ApiModel;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import java.io.Serial;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,10 +26,11 @@ import lombok.experimental.SuperBuilder;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@ApiModel(description = "查询条件")
+@Tag(name = "查询条件")
 @EqualsAndHashCode(callSuper = true)
 public class UserQuery extends BaseQuery<Long> {
 
+    @Serial
     private static final long serialVersionUID = 4319745799007311954L;
     /** 用户电话号码 */
     private String phone;

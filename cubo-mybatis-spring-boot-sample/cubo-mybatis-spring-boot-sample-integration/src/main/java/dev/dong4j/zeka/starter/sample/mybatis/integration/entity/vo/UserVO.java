@@ -2,7 +2,8 @@ package dev.dong4j.zeka.starter.sample.mybatis.integration.entity.vo;
 
 import dev.dong4j.zeka.kernel.common.base.BaseVO;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.GenderEnum;
-import io.swagger.annotations.ApiModel;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import java.io.Serial;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,9 +26,10 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
-@ApiModel(value = "UserVO对象", description = "用户信息表")
+@Tag(name = "UserVO对象", description = "用户信息表")
 public class UserVO extends BaseVO<Long> {
     /** serialVersionUID */
+    @Serial
     private static final long serialVersionUID = 1L;
 
     /** 用户电话号码 */
