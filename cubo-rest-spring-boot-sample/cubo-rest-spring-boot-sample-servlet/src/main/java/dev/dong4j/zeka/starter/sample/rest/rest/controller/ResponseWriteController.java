@@ -32,8 +32,8 @@ public class ResponseWriteController extends ServletController {
      */
     @GetMapping("/test1")
     public void test1() throws IOException {
-        this.response.setContentType("text/html");
-        this.response.getWriter().write("<script></script>");
+        this.getResponse().setContentType("text/html");
+        this.getResponse().getWriter().write("<script></script>");
     }
 
     /**
@@ -55,14 +55,13 @@ public class ResponseWriteController extends ServletController {
      * 然后在 {@link ResponseWrapperAdvice#beforeBodyWrite} 处理 Content-type (因为没有使用 {@link OriginalResponse}).
      * 不会使用到 {@link GetMapping#produces()}
      *
-     * @return the string
      * @throws IOException io exception
      * @since 1.8.0
      */
     @GetMapping(value = "/test3", produces = "application/xml")
     public void test3() throws IOException {
-        this.response.setContentType("text/html");
-        this.response.getWriter().write("<script></script>");
+        this.getResponse().setContentType("text/html");
+        this.getResponse().getWriter().write("<script></script>");
     }
 
     /**
@@ -95,8 +94,8 @@ public class ResponseWriteController extends ServletController {
      */
     @GetMapping(value = "/test6")
     public void test6() throws IOException {
-        this.response.setContentType("application/json");
-        this.response.getWriter().write("{\"aa\":\"bb\"}");
+        this.getResponse().setContentType("application/json");
+        this.getResponse().getWriter().write("{\"aa\":\"bb\"}");
     }
 
     /**
@@ -107,7 +106,7 @@ public class ResponseWriteController extends ServletController {
      */
     @GetMapping(value = "/test7", produces = "application/xml")
     public String test7() {
-        this.response.setContentType("application/json");
+        this.getResponse().setContentType("application/json");
         return "<script></script>";
     }
 
@@ -119,7 +118,7 @@ public class ResponseWriteController extends ServletController {
      */
     @GetMapping(value = "/test8", produces = "application/json")
     public String test8() {
-        this.response.setContentType("application/xml");
+        this.getResponse().setContentType("application/xml");
         return "<script></script>";
     }
 }

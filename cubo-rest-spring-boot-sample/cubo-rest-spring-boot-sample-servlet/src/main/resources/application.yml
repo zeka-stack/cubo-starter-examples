@@ -25,3 +25,4 @@ zeka-stack:
       path: logs
 
 
+debug: true`

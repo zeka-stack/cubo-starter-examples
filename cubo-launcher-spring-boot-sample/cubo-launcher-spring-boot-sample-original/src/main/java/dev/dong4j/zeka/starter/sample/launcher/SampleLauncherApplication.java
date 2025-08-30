@@ -6,7 +6,7 @@ import org.springframework.boot.loader.JarLauncher;
 
 /**
  * <p>Description: debug {@link JarLauncher} </p>
- * https://zhuanlan.zhihu.com/p/112981193
+ * <a href="https://zhuanlan.zhihu.com/p/112981193">...</a>
  *
  * @author dong4j
  * @version 1.0.0

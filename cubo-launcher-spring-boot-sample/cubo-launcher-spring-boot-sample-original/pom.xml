@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.1.RELEASE</version>
+        <version>3.5.4</version>
         <relativePath/>
     </parent>
 
@@ -45,7 +45,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-loader</artifactId>
-            <version>2.2.1.RELEASE</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -55,6 +54,40 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>17</source> <!-- 根据你的项目设置JDK版本 -->
+                    <target>17</target>
+                    <!-- http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html -->
+                    <compilerArgs>
+                        <!-- 在字节码中保留方法参数名称（反射时可获取真实参数名，而不是 arg0、arg1） -->
+                        <arg>-parameters</arg>
+                        <!-- 开启所有 lint 检查，但屏蔽以下常见噪音警告：
+                             -classfile   屏蔽 class 文件相关警告
+                             -rawtypes    屏蔽原始类型（如 List list）的警告
+                             -unchecked   屏蔽未检查的泛型转换警告
+                             -deprecation 屏蔽使用过时 API 的警告
+                             -processing  屏蔽注解处理相关的警告
+                        -->
+                        <arg>-Xlint:all,-classfile,-rawtypes,-unchecked,-deprecation,-processing</arg>
+                        <!-- 允许所有 unnamed module 访问 JDK 内部包 sun.net（JDK9+ 模块化后默认禁止访问） -->
+                        <arg>--add-exports</arg>
+                        <arg>java.base/sun.net=ALL-UNNAMED</arg>
+                        <!-- 允许访问 sun.net.util 包（某些网络相关工具类依赖） -->
+                        <arg>--add-exports</arg>
+                        <arg>java.base/sun.net.util=ALL-UNNAMED</arg>
+                        <!-- 允许访问 jdk.internal.reflect 包（一些框架如 Spring/Hibernate 需要反射调用） -->
+                        <arg>--add-exports</arg>
+                        <arg>java.base/jdk.internal.reflect=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                    </compilerArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>

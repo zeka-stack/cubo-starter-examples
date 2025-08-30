@@ -12,10 +12,6 @@
     <artifactId>cubo-rest-spring-boot-sample-servlet</artifactId>
     <name>Cubo Rest Spring Boot Sample Servlet</name>
 
-    <properties>
-        <knife4j.version>2.0.8</knife4j.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>dev.dong4j</groupId>
@@ -31,6 +27,5 @@
             <groupId>dev.dong4j</groupId>
             <artifactId>cubo-endpoint-servlet-spring-boot-starter</artifactId>
         </dependency>
-
     </dependencies>
 </project>
