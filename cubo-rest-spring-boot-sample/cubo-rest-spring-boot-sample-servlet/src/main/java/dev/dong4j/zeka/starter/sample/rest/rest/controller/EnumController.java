@@ -12,7 +12,6 @@ import jakarta.validation.Valid;
 import java.util.ArrayList;
 import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.TypeConverterDelegate;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -98,10 +97,10 @@ public class EnumController extends ServletController {
      * 通过 value 和 name 来匹配枚举
      * GET http://127.0.0.1:18080/enum/convert_3?status=1
      * GET http://127.0.0.1:18080/enum/convert_3?status=NOT_CHECK
+     * see TypeConverterDelegate#attemptToConvertStringToEnum(Class, String, Object)
      *
      * @param status status
      * @return the result
-     * @see TypeConverterDelegate#attemptToConvertStringToEnum(Class, String, Object)
      * @see GlobalEnumConverterFactory
      * @since 1.0.0
      */
