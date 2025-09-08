@@ -7,8 +7,8 @@ import dev.dong4j.zeka.kernel.test.mock.TypeKit;
 import dev.dong4j.zeka.starter.sample.messaging.Order;
 import dev.dong4j.zeka.starter.sample.messaging.Payment;
 import dev.dong4j.zeka.starter.sample.messaging.SampleKafkaApplicationTest;
-import java.util.List;
 import jakarta.annotation.Resource;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,7 +21,7 @@ import org.springframework.test.context.TestPropertySource;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2025.06.26 00:27
- * @since x.x.x
+ * @since 1.0.0
  */
 @Slf4j
 @TestPropertySource(locations = "classpath:application-producer.yml")

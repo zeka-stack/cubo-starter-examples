@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2025.07.01 01:01
- * @since x.x.x
+ * @since 1.0.0
  */
 @Slf4j
 @ZekaTest

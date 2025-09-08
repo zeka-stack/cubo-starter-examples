@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2025.06.25 01:13
- * @since x.x.x
+ * @since 1.0.0
  */
 @Slf4j
 @ZekaTest(classes = SampleKafkaApplication.class)
