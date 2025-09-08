@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * <p>Description: 测试 {@link ResponseWrapper} </p>
  *
  * @author dong4j
- * @version 1.2.4
+ * @version 1.0.0
  * @email "mailto:dongshijie@gmail.com"
  * @date 2020.02.04 12:05
  * @see ResponseWrapper
@@ -83,7 +83,7 @@ public class ResponseWrapperController extends ServletController {
      * Test 5
      *
      * @return the integer
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping("/integer")
     public Integer test5() {
@@ -94,7 +94,7 @@ public class ResponseWrapperController extends ServletController {
      * Test 6
      *
      * @return the string
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping("/string")
     public String test6() {
@@ -105,7 +105,7 @@ public class ResponseWrapperController extends ServletController {
      * Test 7
      *
      * @return the string [ ]
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping("/string.array")
     public String[] test7() {
@@ -116,7 +116,7 @@ public class ResponseWrapperController extends ServletController {
      * Test 8
      *
      * @return the list
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping("/list")
     public List<String> test8() {

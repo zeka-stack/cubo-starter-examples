@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.05.26 12:00
- * @since 1.9.0
+ * @since 1.0.0
  */
 @AutoConfigureMockMvc
 class SpringTrimControllerTest extends Chapter22ApplicationTest {
@@ -31,7 +31,7 @@ class SpringTrimControllerTest extends Chapter22ApplicationTest {
      *
      * @throws Exception exception
      * @see SpringTrimController#urlParam(String)
-     * @since 1.9.0
+     * @since 1.0.0
      */
     @Test
     void url() throws Exception {
@@ -46,7 +46,7 @@ class SpringTrimControllerTest extends Chapter22ApplicationTest {
      *
      * @throws Exception exception
      * @see SpringTrimController#formParam(User)
-     * @since 1.9.0
+     * @since 1.0.0
      */
     @Test
     void form() throws Exception {
@@ -65,7 +65,7 @@ class SpringTrimControllerTest extends Chapter22ApplicationTest {
      *
      * @throws Exception exception
      * @see SpringTrimController#bodyParam(User)
-     * @since 1.9.0
+     * @since 1.0.0
      */
     @Test
     void body() throws Exception {

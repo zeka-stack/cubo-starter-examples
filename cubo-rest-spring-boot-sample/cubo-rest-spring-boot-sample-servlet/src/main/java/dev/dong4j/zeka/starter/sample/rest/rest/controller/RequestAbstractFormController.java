@@ -6,6 +6,7 @@ import dev.dong4j.zeka.kernel.common.enums.SerializeEnum;
 import dev.dong4j.zeka.starter.rest.ServletController;
 import dev.dong4j.zeka.starter.rest.annotation.RequestAbstractForm;
 import dev.dong4j.zeka.starter.rest.annotation.RestControllerWrapper;
+import dev.dong4j.zeka.starter.rest.support.RequestAbstractFormMethodArgumentResolver;
 import dev.dong4j.zeka.starter.rest.support.SubClassType;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
@@ -23,11 +24,11 @@ import org.springframework.web.bind.annotation.RestController;
  * 3. 此注解只处理抽象类且支持嵌套抽象类
  *
  * @author dong4j
- * @version 1.4.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.05.23 21:49
  * @see RequestAbstractFormMethodArgumentResolver
- * @since 1.4.0
+ * @since 1.0.0
  */
 @Slf4j
 @RestController
@@ -46,7 +47,7 @@ public class RequestAbstractFormController extends ServletController {
      *
      * @param form form
      * @return the result
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @PostMapping("/10")
     public Result<AbstractForm> param_10(@RequestAbstractForm(Type.class) AbstractForm form) {
@@ -59,10 +60,10 @@ public class RequestAbstractFormController extends ServletController {
      *
      * @param <T> parameter
      * @author dong4j
-     * @version 1.4.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.05.23 21:50
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @Data
     private static abstract class AbstractForm<T extends Serializable> extends BaseForm<T> {
@@ -78,10 +79,10 @@ public class RequestAbstractFormController extends ServletController {
      * <p>Description: </p>
      *
      * @author dong4j
-     * @version 1.4.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.05.23 21:50
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @Data
     private static class A extends AbstractForm<String> {
@@ -93,10 +94,10 @@ public class RequestAbstractFormController extends ServletController {
      * <p>Description: </p>
      *
      * @author dong4j
-     * @version 1.4.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.05.23 21:50
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @Data
     private static class B extends AbstractForm<String> {
@@ -108,10 +109,10 @@ public class RequestAbstractFormController extends ServletController {
      * <p>Description: </p>
      *
      * @author dong4j
-     * @version 1.4.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.05.23 21:50
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @Getter
     @AllArgsConstructor

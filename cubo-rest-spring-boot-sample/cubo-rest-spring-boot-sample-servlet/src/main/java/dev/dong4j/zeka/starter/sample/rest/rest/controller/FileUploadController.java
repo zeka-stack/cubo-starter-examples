@@ -28,7 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.09.11 15:30
- * @since 1.6.0
+ * @since 1.0.0
  */
 @Slf4j
 @RestController
@@ -40,7 +40,7 @@ public class FileUploadController extends ServletController {
      *
      * @param file file
      * @return the string
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Operation(summary = "文件上传测试", description = "xxx")
     @PostMapping("upload")

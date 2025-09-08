@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.05.26 12:00
- * @since 1.9.0
+ * @since 1.0.0
  */
 @RestController
 public class SpringTrimController extends ServletController {
@@ -25,7 +25,7 @@ public class SpringTrimController extends ServletController {
      *
      * @param name name
      * @return the string
-     * @since 1.9.0
+     * @since 1.0.0
      */
     @GetMapping(value = "/url", produces = MediaType.TEXT_PLAIN_VALUE)
     public String urlParam(String name) {
@@ -37,7 +37,7 @@ public class SpringTrimController extends ServletController {
      *
      * @param u u
      * @return the user
-     * @since 1.9.0
+     * @since 1.0.0
      */
     @PostMapping("/form")
     public User formParam(User u) {
@@ -50,7 +50,7 @@ public class SpringTrimController extends ServletController {
      *
      * @param u u
      * @return the user
-     * @since 1.9.0
+     * @since 1.0.0
      */
     @PostMapping(value = "/body")
     public User bodyParam(@RequestBody User u) {

@@ -9,14 +9,14 @@ import dev.dong4j.zeka.starter.logsystem.storage.ILogStorage;
 import dev.dong4j.zeka.starter.sample.logsystem.service.ApiLogStorageService;
 import dev.dong4j.zeka.starter.sample.logsystem.service.ErrorLogStorageService;
 import dev.dong4j.zeka.starter.sample.logsystem.service.SystemLogStorageService;
-import org.springframework.context.annotation.Bean;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.context.annotation.Bean;
 
 /**
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2019.11.21 14:06
  * @since 1.0.0

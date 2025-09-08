@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.09.17 17:52
- * @since 1.6.0
+ * @since 1.0.0
  */
 @Slf4j
 class ValidationMethodServiceTest extends Chapter22ApplicationTest {
@@ -26,7 +26,7 @@ class ValidationMethodServiceTest extends Chapter22ApplicationTest {
     /**
      * Test 1
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Test
     void test_1() {
@@ -49,7 +49,7 @@ class ValidationMethodServiceTest extends Chapter22ApplicationTest {
     /**
      * Test 2
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Test
     void test_2() {

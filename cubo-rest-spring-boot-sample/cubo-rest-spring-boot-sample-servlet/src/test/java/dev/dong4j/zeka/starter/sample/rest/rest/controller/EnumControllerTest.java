@@ -28,7 +28,7 @@ import org.springframework.util.CollectionUtils;
  * 发序列化匹配顺序: value > name > 枚举下标
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.10 14:47
  * @since 1.0.0

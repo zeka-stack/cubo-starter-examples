@@ -7,6 +7,8 @@ import dev.dong4j.zeka.kernel.validation.constraints.VehicleNumber;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import java.io.Serial;
+import java.io.Serializable;
 import lombok.Builder;
 import lombok.Data;
 
@@ -17,13 +19,14 @@ import lombok.Data;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.08.30 18:23
- * @since 1.6.0
+ * @since 1.0.0
  */
 @Data
 @Builder
 @Valid
-public class TestForm {
+public class TestForm implements Serializable {
     /** serialVersionUID */
+    @Serial
     private static final long serialVersionUID = -5274383672719713886L;
     /** Date */
     @Date

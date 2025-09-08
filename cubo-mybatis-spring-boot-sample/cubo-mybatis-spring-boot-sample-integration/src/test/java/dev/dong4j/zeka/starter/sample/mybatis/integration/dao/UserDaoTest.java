@@ -41,7 +41,7 @@ class UserDaoTest extends MybatisApplicationTest {
     /**
      * Test save
      *
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void test_save() {
@@ -67,7 +67,7 @@ class UserDaoTest extends MybatisApplicationTest {
     /**
      * Test insert
      *
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void test_insert() {
@@ -111,7 +111,7 @@ class UserDaoTest extends MybatisApplicationTest {
     /**
      * Test 3
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Test
     void test3() {
@@ -126,7 +126,7 @@ class UserDaoTest extends MybatisApplicationTest {
      * 因为 Cursor 流式计算需要 Session 保持打开，有三种方式可以：
      * 1. @Transactional 开启事务，注意：Spring 框架当中注解只在外部调用时生效。在当前类中调用这个方法，依旧会报错。
      *
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     @Transactional
@@ -147,7 +147,7 @@ class UserDaoTest extends MybatisApplicationTest {
      * 因为 Cursor 流式计算需要 Session 保持打开，有三种方式可以：
      * 2. 可以用 SqlSessionFactory 来手工打开数据库连接
      *
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void test4_2() {

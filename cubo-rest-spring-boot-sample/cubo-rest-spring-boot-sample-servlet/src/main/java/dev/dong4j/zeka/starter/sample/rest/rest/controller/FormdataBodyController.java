@@ -40,7 +40,7 @@ public class FormdataBodyController extends ServletController {
      *
      * @param loginForm login form
      * @return the result
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @RequestMapping(value = "/1", method = RequestMethod.POST)
     public Result<LoginForm> param(@FormDataBody LoginForm loginForm) {
@@ -54,7 +54,7 @@ public class FormdataBodyController extends ServletController {
      * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.08.19 18:09
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Data
     @Builder

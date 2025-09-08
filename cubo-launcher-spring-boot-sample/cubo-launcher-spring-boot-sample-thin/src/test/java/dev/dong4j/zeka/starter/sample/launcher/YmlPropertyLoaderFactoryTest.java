@@ -1,6 +1,7 @@
 package dev.dong4j.zeka.starter.sample.launcher;
 
 import dev.dong4j.zeka.kernel.common.yml.YmlPropertyLoaderFactory;
+import java.nio.charset.StandardCharsets;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.Contract;
@@ -18,15 +19,13 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.EncodedResource;
 import org.yaml.snakeyaml.scanner.ScannerException;
 
-import java.nio.charset.StandardCharsets;
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * <p>Description: </p>
  *
  * @author dong4j
- * @version 1.2.3
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.01.27 18:19
  * @since 1.0.0

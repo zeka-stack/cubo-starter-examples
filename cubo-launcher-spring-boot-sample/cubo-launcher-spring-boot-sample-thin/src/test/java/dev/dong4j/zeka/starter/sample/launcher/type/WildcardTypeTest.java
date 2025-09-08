@@ -1,9 +1,5 @@
 package dev.dong4j.zeka.starter.sample.launcher.type;
 
-import lombok.extern.slf4j.Slf4j;
-import org.jetbrains.annotations.NotNull;
-import org.junit.jupiter.api.Test;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.ParameterizedType;
@@ -11,6 +7,9 @@ import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.lang.reflect.WildcardType;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.Test;
 
 /**
  * WildcardType represents a wildcard type expression, such as ?, ? extends Number, or ? super Integer.
@@ -20,7 +19,7 @@ import java.util.List;
  * 2. Type [] getLowerBounds (); // 获得泛型表达式下界 (下限)  获取泛型变量的下边界 (super)
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.07 21:21
  * @since 1.0.0
@@ -69,23 +68,20 @@ class WildcardTypeTest {
                     continue;
                 }
                 log.info("begin ****** 当前 field:" + f.getName() + " *************************");
-                if (f.getGenericType() instanceof ParameterizedType) {
-                    ParameterizedType parameterizedType = (ParameterizedType) f.getGenericType();
+                if (f.getGenericType() instanceof ParameterizedType parameterizedType) {
                     for (Type type : parameterizedType.getActualTypeArguments()) {
                         log.info(f.getName() + ": 获取 ParameterizedType:" + type);
                         if (type instanceof WildcardType) {
                             printWildcardType((WildcardType) type);
                         }
                     }
-                } else if (f.getGenericType() instanceof GenericArrayType) {
-                    GenericArrayType genericArrayType = (GenericArrayType) f.getGenericType();
+                } else if (f.getGenericType() instanceof GenericArrayType genericArrayType) {
                     log.info("GenericArrayType type :" + genericArrayType);
                     Type genericComponentType = genericArrayType.getGenericComponentType();
                     if (genericComponentType instanceof WildcardType) {
                         printWildcardType((WildcardType) genericComponentType);
                     }
-                } else if (f.getGenericType() instanceof TypeVariable) {
-                    TypeVariable typeVariable = (TypeVariable) f.getGenericType();
+                } else if (f.getGenericType() instanceof TypeVariable typeVariable) {
                     log.info("typeVariable:" + typeVariable);
 
                 } else {

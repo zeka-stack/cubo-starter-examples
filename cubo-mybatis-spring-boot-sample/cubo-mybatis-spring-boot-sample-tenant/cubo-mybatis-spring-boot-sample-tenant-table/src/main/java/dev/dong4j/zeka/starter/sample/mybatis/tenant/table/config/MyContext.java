@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * <p>Description: 当前系统的上下文 </p>
  *
  * @author dong4j
- * @version 1.2.4
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.02.17 18:27
  * @since 1.0.0

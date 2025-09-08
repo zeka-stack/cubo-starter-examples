@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * <p>Description: 枚举序列化与反序列化 </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.10 14:44
  * @since 1.0.0
@@ -251,7 +251,7 @@ public class EnumController extends ServletController {
      *
      * @param form form
      * @return the result
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @PostMapping(value = "/convert_object", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public Result<UserForm> convert_object_form(@Valid UserForm form) {
@@ -309,7 +309,7 @@ public class EnumController extends ServletController {
      *
      * @param form form
      * @return the result
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @PutMapping(value = "/convert_object", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Result<UserForm> convert_object_json(@RequestBody @Valid UserForm form) {

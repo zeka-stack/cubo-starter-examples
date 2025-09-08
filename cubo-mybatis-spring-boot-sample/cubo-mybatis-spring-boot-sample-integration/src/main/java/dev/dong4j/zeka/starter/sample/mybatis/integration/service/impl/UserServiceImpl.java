@@ -33,7 +33,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserDao, User> implements U
     /**
      * Transactional
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Override
     @Transactional(rollbackFor = Throwable.class)

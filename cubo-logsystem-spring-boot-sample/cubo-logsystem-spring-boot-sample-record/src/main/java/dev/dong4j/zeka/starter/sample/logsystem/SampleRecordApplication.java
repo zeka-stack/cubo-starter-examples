@@ -5,6 +5,7 @@ import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.starter.logsystem.annotation.OperationLog;
 import dev.dong4j.zeka.starter.logsystem.annotation.RestLog;
 import dev.dong4j.zeka.starter.logsystem.enums.OperationAction;
+import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,13 +13,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
-
 /**
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.2.4
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.02.25 17:09
  * @since 1.0.0

@@ -21,7 +21,7 @@ import org.junit.jupiter.api.Test;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.23 19:59
  * @since 1.0.0
@@ -68,7 +68,7 @@ class SampleTenantTableApplicationTest {
      * 查询语句访问者
      *
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.02.23 14:58
      * @since 2018 /6/1 12:08
@@ -104,7 +104,7 @@ class SampleTenantTableApplicationTest {
      * 数据库表名访问者
      *
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.02.23 14:58
      * @since 2018 /6/1 11:52

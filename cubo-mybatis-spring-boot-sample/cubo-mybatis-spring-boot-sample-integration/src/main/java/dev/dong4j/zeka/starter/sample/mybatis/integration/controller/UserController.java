@@ -39,7 +39,7 @@ public class UserController extends ServletController {
      *
      * @param query 分页查询参数, 继承 {@link BaseQuery}
      * @return the result
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @GetMapping("/users/page_1")
     @Operation(summary = "用户分页查询实现方式 1")
@@ -53,7 +53,7 @@ public class UserController extends ServletController {
      *
      * @param query 分页查询参数, 继承 {@link BaseQuery}
      * @return the result
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @GetMapping("/users/page_2")
     @Operation(summary = "用户分页查询实现方式 2")
@@ -67,7 +67,7 @@ public class UserController extends ServletController {
      *
      * @param query 分页查询参数, 继承 {@link BaseQuery}
      * @return the result
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @GetMapping("/users/list")
     @Operation(summary = "获取所有用户集合")
@@ -81,7 +81,7 @@ public class UserController extends ServletController {
      *
      * @param ids ids
      * @return the result
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @DeleteMapping("/users")
     @Operation(summary = "批量删除")

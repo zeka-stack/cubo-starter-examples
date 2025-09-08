@@ -9,7 +9,7 @@ import org.springframework.test.context.ActiveProfiles;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.02.26 14:52
  * @since 1.0.0
@@ -22,7 +22,7 @@ class ChangeEnableShowLocationTest extends LogSystemApplicationTest {
      * <p>Description: 本地开发, 不需要配置默认开启 location  </p>
      *
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.03.03 13:46
      * @since 1.0.0
@@ -48,7 +48,7 @@ class ChangeEnableShowLocationTest extends LogSystemApplicationTest {
      * <p>Description: 本地开发, 显式开启 location 配置 </p>
      *
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.03.03 13:46
      * @since 1.0.0
@@ -76,7 +76,7 @@ class ChangeEnableShowLocationTest extends LogSystemApplicationTest {
      * <p>Description: 非本地开发, 默认关闭 location </p>
      *
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.03.03 14:10
      * @since 1.0.0
@@ -104,7 +104,7 @@ class ChangeEnableShowLocationTest extends LogSystemApplicationTest {
      * <p>Description: 非本地开发, 显式开启 location 配置 </p>
      *
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.03.03 14:10
      * @since 1.0.0

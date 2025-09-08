@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.09.17 15:33
- * @since 1.6.0
+ * @since 1.0.0
  */
 @Slf4j
 @WebAppConfiguration

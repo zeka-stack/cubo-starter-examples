@@ -18,10 +18,10 @@ import springfox.documentation.swagger.web.SwaggerResource;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.7.3
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.02.03 14:15
- * @since 1.7.3
+ * @since 1.0.0
  */
 @Slf4j
 public class ResponseAdviceTest extends Chapter22ApplicationTest {
@@ -32,7 +32,7 @@ public class ResponseAdviceTest extends Chapter22ApplicationTest {
      *
      * @throws Exception exception
      * @see ApiResourceController#swaggerResources ApiResourceController#swaggerResources
-     * @since 1.7.3
+     * @since 1.0.0
      */
     @Test
     public void test_not_wrapper() throws Exception {
@@ -54,7 +54,7 @@ public class ResponseAdviceTest extends Chapter22ApplicationTest {
 
     /**
      * @see ResponseWrapperControllerTest#test_wrapper()
-     * @since 1.7.3
+     * @since 1.0.0
      */
     @Test
     public void test_with_wrapper() {

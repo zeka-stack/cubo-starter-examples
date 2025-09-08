@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  * <p>Description: 统一响应结果 </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.10 20:32
  * @since 1.0.0
@@ -375,7 +375,7 @@ public class ResutController extends ServletController {
      * Code result 1
      *
      * @return the result
-     * @since 1.5.0
+     * @since 1.0.0
      */
     @GetMapping("/error_BaseCodes_test")
     public Result codeResult1() {
@@ -386,7 +386,7 @@ public class ResutController extends ServletController {
      * Code result 2
      *
      * @return the result
-     * @since 1.5.0
+     * @since 1.0.0
      */
     @GetMapping("/error_ServletCodeEnum_test")
     public Result codeResult2() {
@@ -397,7 +397,7 @@ public class ResutController extends ServletController {
      * Code result 2
      *
      * @return the result
-     * @since 1.5.0
+     * @since 1.0.0
      */
     @GetMapping("/error_OtherCodeEnum_test")
     public Result codeResult3() {
@@ -419,7 +419,7 @@ public class ResutController extends ServletController {
      * 基础类型序列化
      *
      * @return the result
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @GetMapping("/json")
     public Result<NumberVO> json() {
@@ -433,7 +433,7 @@ public class ResutController extends ServletController {
      * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.09.23 10:58
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Data
     @Builder

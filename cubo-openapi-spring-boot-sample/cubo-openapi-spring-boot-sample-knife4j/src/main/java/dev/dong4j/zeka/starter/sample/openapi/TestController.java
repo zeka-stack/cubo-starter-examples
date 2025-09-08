@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.01.27 18:19
- * @since 1.4.0
+ * @since 1.0.0
  */
 @Tag(name = "swagger test api")
 @RestController
@@ -41,7 +41,7 @@ public class TestController {
      *
      * @param id the id
      * @return the result
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @GetMapping("/user/{id}")
     @Operation(summary = "获取用户详情")
@@ -55,7 +55,7 @@ public class TestController {
      *
      * @param user the user
      * @return the result
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @PostMapping("/user")
     @Operation(summary = "创建新用户")
@@ -69,7 +69,7 @@ public class TestController {
      *
      * @param user the user
      * @return the result
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @PutMapping("/user")
     @Operation(summary = "修改用户信息")
@@ -83,7 +83,7 @@ public class TestController {
      *
      * @param id the id
      * @return the result
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @DeleteMapping("/user/{id}")
     @Operation(summary = "删除用户")
@@ -98,7 +98,7 @@ public class TestController {
      * @param pageIndex the page index
      * @param pageSize  the page size
      * @return the list
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @GetMapping("/user")
     @Operation(summary = "用户列表")
@@ -112,10 +112,10 @@ public class TestController {
      * <p>Description: </p>
      *
      * @author dong4j
-     * @version 1.4.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.05.08 17:27
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @Data
     @Builder

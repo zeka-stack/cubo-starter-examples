@@ -21,7 +21,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.05.08 16:58
- * @since 1.9.0
+ * @since 1.0.0
  */
 class ResponseWriteControllerTest extends Chapter22ApplicationTest {
 
@@ -30,7 +30,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
      *
      * @throws Exception exception
      * @see ResponseWriteController#test1()
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Test
     void test1() throws Exception {
@@ -47,7 +47,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
      * Test 2
      *
      * @see ResponseWriteController#test2()
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Test
     void test2() throws Exception {
@@ -65,7 +65,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
      * Test 3
      *
      * @see ResponseWriteController#test3()
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Test
     void test3() throws Exception {
@@ -82,7 +82,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
      * Test 4
      *
      * @see ResponseWriteController#test4()
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Test
     void test4() throws Exception {
@@ -99,7 +99,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
      * Test 5
      *
      * @see ResponseWriteController#test5()
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Test
     void test5() throws Exception {
@@ -117,7 +117,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
      * Test 6
      *
      * @see ResponseWriteController#test6()
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Test
     void test6() throws Exception {
@@ -134,7 +134,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
      * Test 7
      *
      * @see ResponseWriteController#test7()
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Test
     void test7() throws Exception {
@@ -152,7 +152,7 @@ class ResponseWriteControllerTest extends Chapter22ApplicationTest {
      * Test 8
      *
      * @see ResponseWriteController#test8()
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Test
     void test8() throws Exception {

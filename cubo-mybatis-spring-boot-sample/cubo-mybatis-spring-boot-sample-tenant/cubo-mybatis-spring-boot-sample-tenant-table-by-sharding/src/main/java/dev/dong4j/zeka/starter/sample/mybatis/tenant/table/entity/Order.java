@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dongshijie@gmail.com"
  * @date 2020.02.23 08:40
  * @since 1.0.0

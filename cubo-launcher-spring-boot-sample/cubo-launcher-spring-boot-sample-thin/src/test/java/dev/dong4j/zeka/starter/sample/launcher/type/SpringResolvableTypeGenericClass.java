@@ -1,20 +1,19 @@
 package dev.dong4j.zeka.starter.sample.launcher.type;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.ResolvableType;
 import org.springframework.util.ReflectionUtils;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 /**
  * <p>Description: 使用 spring 获取 Field 中变量的泛型信息 </p>
  * https://blog.csdn.net/u012881904/article/details/80813294
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.07 21:18
  * @since 1.0.0

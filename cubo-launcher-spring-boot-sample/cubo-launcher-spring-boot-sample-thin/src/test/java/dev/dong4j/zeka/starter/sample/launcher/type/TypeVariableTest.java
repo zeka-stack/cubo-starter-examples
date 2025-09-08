@@ -1,9 +1,5 @@
 package dev.dong4j.zeka.starter.sample.launcher.type;
 
-import lombok.extern.slf4j.Slf4j;
-import org.jetbrains.annotations.NotNull;
-import org.junit.jupiter.api.Test;
-
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.GenericArrayType;
@@ -11,6 +7,9 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.Test;
 
 /**
  * Interface TypeVariable<D extends GenericDeclaration> , D - the type of generic declaration that declared the underlying type variable.
@@ -26,7 +25,7 @@ import java.util.List;
  * @param <T> parameter
  * @param <V> parameter
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.07 21:20
  * @since 1.0.0
@@ -75,8 +74,7 @@ class TypeVariableTest<T extends Number & Serializable, V> {
                     continue;
                 }
                 log.info("begin ****** 当前 field:" + f.getName() + " *************************");
-                if (f.getGenericType() instanceof ParameterizedType) {
-                    ParameterizedType parameterizedType = (ParameterizedType) f.getGenericType();
+                if (f.getGenericType() instanceof ParameterizedType parameterizedType) {
                     for (Type type : parameterizedType.getActualTypeArguments()) {
                         log.info(f.getName() + ": 获取 ParameterizedType:" + type);
                         if (type instanceof TypeVariable) {
@@ -91,16 +89,13 @@ class TypeVariableTest<T extends Number & Serializable, V> {
                     if (parameterizedType.getRawType() != null) {
                         log.info(f.getName() + ":getRawType:" + parameterizedType.getRawType());
                     }
-                } else if (f.getGenericType() instanceof GenericArrayType) {
-                    GenericArrayType genericArrayType = (GenericArrayType) f.getGenericType();
+                } else if (f.getGenericType() instanceof GenericArrayType genericArrayType) {
                     log.info("GenericArrayType type :" + genericArrayType);
                     Type genericComponentType = genericArrayType.getGenericComponentType();
-                    if (genericComponentType instanceof TypeVariable) {
-                        TypeVariable<?> typeVariable = (TypeVariable<?>) genericComponentType;
+                    if (genericComponentType instanceof TypeVariable<?> typeVariable) {
                         printTypeVariable(f.getName(), typeVariable);
                     }
-                } else if (f.getGenericType() instanceof TypeVariable) {
-                    TypeVariable<?> typeVariable = (TypeVariable<?>) f.getGenericType();
+                } else if (f.getGenericType() instanceof TypeVariable<?> typeVariable) {
                     printTypeVariable(f.getName(), typeVariable);
                 } else {
                     log.info("type :" + f.getGenericType());

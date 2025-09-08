@@ -4,6 +4,7 @@ import dev.dong4j.zeka.kernel.validation.constraints.Date;
 import dev.dong4j.zeka.kernel.validation.util.BeanValidator;
 import dev.dong4j.zeka.starter.sample.rest.SampleRestApplicationTest;
 import jakarta.validation.constraints.NotBlank;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Map;
 import lombok.Builder;
@@ -15,7 +16,7 @@ import org.junit.jupiter.api.Test;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.2.3
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2019.12.27 13:19
  * @since 1.0.0
@@ -46,7 +47,7 @@ class DateTest extends SampleRestApplicationTest {
      * <p>Description: </p>
      *
      * @author dong4j
-     * @version 1.2.3
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2019.12.27 13:25
      * @since 1.0.0
@@ -55,6 +56,7 @@ class DateTest extends SampleRestApplicationTest {
     @Builder
     private static class TestForm1 implements Serializable {
         /** serialVersionUID */
+        @Serial
         private static final long serialVersionUID = -5274383672719713886L;
         /** Date */
         @Date
@@ -84,7 +86,7 @@ class DateTest extends SampleRestApplicationTest {
      * <p>Description: </p>
      *
      * @author dong4j
-     * @version 1.2.3
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2019.12.27 13:25
      * @since 1.0.0
@@ -93,6 +95,7 @@ class DateTest extends SampleRestApplicationTest {
     @Builder
     private static class TestForm2 implements Serializable {
         /** serialVersionUID */
+        @Serial
         private static final long serialVersionUID = -5274383672719713886L;
         /** Date */
         @Date
@@ -142,7 +145,7 @@ class DateTest extends SampleRestApplicationTest {
      * <p>Description: </p>
      *
      * @author dong4j
-     * @version 1.2.3
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2019.12.27 13:25
      * @since 1.0.0
@@ -151,6 +154,7 @@ class DateTest extends SampleRestApplicationTest {
     @Builder
     private static class TestForm3 implements Serializable {
         /** serialVersionUID */
+        @Serial
         private static final long serialVersionUID = -5274383672719713886L;
         /** Date */
         @Date

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.09.28 20:36
- * @since 2.0.0
+ * @since 1.0.0
  */
 @Slf4j
 @RestController
@@ -32,7 +32,7 @@ public class BigLongController extends ServletController {
      * Test 1
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test1")
     public Result<Long> test1() {
@@ -43,7 +43,7 @@ public class BigLongController extends ServletController {
      * Test 2
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test2")
     public Result<Long> test2() {
@@ -54,7 +54,7 @@ public class BigLongController extends ServletController {
      * Test 3
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test3")
     public Result<Long> test3() {
@@ -65,7 +65,7 @@ public class BigLongController extends ServletController {
      * Test 4
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test4")
     public Result<List<Long>> test4() {
@@ -80,7 +80,7 @@ public class BigLongController extends ServletController {
      * Test 5
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test5")
     public Result<List<Long>> test5() {
@@ -95,7 +95,7 @@ public class BigLongController extends ServletController {
      * Test 6
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test6")
     public Result<List<Long>> test6() {
@@ -110,7 +110,7 @@ public class BigLongController extends ServletController {
      * Test 7
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test7")
     public Result<AbstractBaseEntity> test7() {
@@ -121,7 +121,7 @@ public class BigLongController extends ServletController {
      * Test 8
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test8")
     public Result<AbstractBaseEntity> test8() {
@@ -132,7 +132,7 @@ public class BigLongController extends ServletController {
      * Test 9
      *
      * @return the result
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("/test9")
     public Result<AbstractBaseEntity> test9() {

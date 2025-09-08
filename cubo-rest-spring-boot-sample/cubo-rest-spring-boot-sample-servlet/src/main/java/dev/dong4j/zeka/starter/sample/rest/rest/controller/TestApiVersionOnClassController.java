@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 2.0.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.09.26 11:25
- * @since 2.0.0
+ * @since 1.0.0
  */
 @Slf4j
 @ApiVersion({1, 2, 3})
@@ -23,7 +23,7 @@ public class TestApiVersionOnClassController {
      * Hello 1
      *
      * @return the string
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @ApiVersion(9)
     @GetMapping("hello")
@@ -35,7 +35,7 @@ public class TestApiVersionOnClassController {
      * Hello 2
      *
      * @return the string
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("hello")
     public String hello2() {

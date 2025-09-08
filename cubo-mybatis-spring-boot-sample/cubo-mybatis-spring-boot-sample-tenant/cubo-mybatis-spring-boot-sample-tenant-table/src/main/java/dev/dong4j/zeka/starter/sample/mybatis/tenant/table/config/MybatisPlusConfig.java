@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Bean;
  * <p>Description: </p>
  *
  * @author miemie
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.02.23 14:28
  * @since 2018 -08-10
@@ -75,7 +75,7 @@ public class MybatisPlusConfig {
      * 数据库表名访问者
      *
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.02.23 14:58
      * @since 1.0.0

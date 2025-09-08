@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.05.08 09:48
- * @since 1.9.0
+ * @since 1.0.0
  */
 @RestController
 @RequestMapping("/wrapper")
@@ -28,7 +28,7 @@ public class ResponseWriteController extends ServletController {
      * 然后在 {@link ResponseWrapperAdvice#beforeBodyWrite} 处理 Content-type (因为没有使用 {@link OriginalResponse})
      *
      * @throws IOException io exception
-     * @since 1.7.3
+     * @since 1.0.0
      */
     @GetMapping("/test1")
     public void test1() throws IOException {
@@ -42,7 +42,7 @@ public class ResponseWriteController extends ServletController {
      *
      * @return the string
      * @throws IOException io exception
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping("/test2")
     public String test2() throws IOException {
@@ -56,7 +56,7 @@ public class ResponseWriteController extends ServletController {
      * 不会使用到 {@link GetMapping#produces()}
      *
      * @throws IOException io exception
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping(value = "/test3", produces = "application/xml")
     public void test3() throws IOException {
@@ -68,7 +68,7 @@ public class ResponseWriteController extends ServletController {
      * 返回的类型为非 json, 则不包装
      *
      * @return the string
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping(value = "/test4", produces = "application/xml")
     public String test4() {
@@ -79,7 +79,7 @@ public class ResponseWriteController extends ServletController {
      * 包装
      *
      * @return the string
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping(value = "/test5", produces = "application/json")
     public String test5() {
@@ -90,7 +90,7 @@ public class ResponseWriteController extends ServletController {
      * 包装
      *
      * @throws IOException io exception
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping(value = "/test6")
     public void test6() throws IOException {
@@ -102,7 +102,7 @@ public class ResponseWriteController extends ServletController {
      * 包装
      *
      * @return the string
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping(value = "/test7", produces = "application/xml")
     public String test7() {
@@ -114,7 +114,7 @@ public class ResponseWriteController extends ServletController {
      * 不包装
      *
      * @return the string
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @GetMapping(value = "/test8", produces = "application/json")
     public String test8() {

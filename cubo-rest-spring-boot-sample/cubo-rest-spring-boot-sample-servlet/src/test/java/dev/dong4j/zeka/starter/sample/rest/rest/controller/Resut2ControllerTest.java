@@ -16,10 +16,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
  * 各场景测试返回内容已再单元测试方法上做备注
  *
  * @author dong4j
- * @version 1.7.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.12.04 14:04
- * @since 1.7.0
+ * @since 1.0.0
  */
 @Slf4j
 class Resut2ControllerTest extends Chapter22ApplicationTest {
@@ -30,7 +30,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":"hello"},"message":"请求成功","traceId":"67c1293b49bdd484110acb80239b017a"}
      *
      * @see Resut2Controller#stringResult() Resut2Controller#stringResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void stringResult() {
@@ -43,7 +43,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":["hello","world"]},"message":"请求成功","traceId":"4f299788e205dd8434464ea6fb1e6385"}
      *
      * @see Resut2Controller#stringArrayResult() Resut2Controller#stringArrayResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void stringArrayResult() {
@@ -56,7 +56,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":true},"message":"请求成功","traceId":"39c9511fc6d551ac29601f41e5f89ab1"}
      *
      * @see Resut2Controller#booleanResult() Resut2Controller#booleanResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void booleanResult() {
@@ -69,7 +69,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":[true,false]},"message":"请求成功","traceId":"d654ce80cb04dc7887c8ea83755271b1"}
      *
      * @see Resut2Controller#booleanArrayResult() Resut2Controller#booleanArrayResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void booleanArrayResult() {
@@ -82,7 +82,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":1024}, "message":"请求成功","traceId":"f62cae7d0b414d908e6c28815c4643f0"}
      *
      * @see Resut2Controller#integerResult() Resut2Controller#integerResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void integerResult() {
@@ -95,7 +95,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":[1024,2048]},"message":"请求成功","traceId":"8357bf8e359a73db7becb569ea6010be"}
      *
      * @see Resut2Controller#integerArrayResult() Resut2Controller#integerArrayResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void integerArrayResult() {
@@ -108,7 +108,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":1024},"message":"请求成功","traceId":"62a54b0da1c4b5bd1b8f969567f1efe3"}
      *
      * @see Resut2Controller#longResult() Resut2Controller#longResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void longResult() {
@@ -121,7 +121,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":[1024,2048]},"message":"请求成功","traceId":"85650d1914268b668e088cffdf39f960"}
      *
      * @see Resut2Controller#logngArrayResult() Resut2Controller#logngArrayResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void logngArrayResult() {
@@ -134,7 +134,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":111},"message":"请求成功","traceId":"b4c7ca69f3c040e8abecf77c82d2b9df"}
      *
      * @see Resut2Controller#byteResult() Resut2Controller#byteResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void byteResult() {
@@ -147,7 +147,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"value":[111]},"message":"请求成功","traceId":"b458eb8cb422e3cc84e5bd47c8280459"}
      *
      * @see Resut2Controller#byteArrayResult() Resut2Controller#byteArrayResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void byteArrayResult() {
@@ -160,7 +160,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":["xxx","yyy"],"message":"请求成功","traceId":"a08735da9bac57e02ba0ad0c5487660c"}
      *
      * @see Resut2Controller#listResult() Resut2Controller#listResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void listResult() {
@@ -174,7 +174,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "message":"请求成功","traceId":"b1d7bd2c75aaaa38ddf9d66be0a83a75"}
      *
      * @see Resut2Controller#listUserResult() Resut2Controller#listUserResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void listUserResult() {
@@ -187,7 +187,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":{"yyy":"bbb","xxx":"aaa"},"message":"请求成功","traceId":"19bde638c296e633501866e8e089f0ec"}
      *
      * @see Resut2Controller#mapResult() Resut2Controller#mapResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void mapResult() {
@@ -202,7 +202,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "message":"请求成功","traceId":"f9d1a1836aad8263e254b4e0ce9b98f1"}
      *
      * @see Resut2Controller#userMapResult() Resut2Controller#userMapResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void userMapResult() {
@@ -215,7 +215,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "data":["yyy","xxx"],"message":"请求成功","traceId":"749470f8b858a718604b2bb47e7178ca"}
      *
      * @see Resut2Controller#setResult() Resut2Controller#setResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void setResult() {
@@ -229,7 +229,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
      * "message":"请求成功","traceId":"e180d673a02b01fe5678c00a4504f7ff"}
      *
      * @see Resut2Controller#setUserResult() Resut2Controller#setUserResult()
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void setUserResult() {
@@ -239,7 +239,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
     /**
      * Page
      *
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void page() {
@@ -249,7 +249,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
     /**
      * Page 1
      *
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void page1() {
@@ -259,7 +259,7 @@ class Resut2ControllerTest extends Chapter22ApplicationTest {
     /**
      * Page 1
      *
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @Test
     void page2() {

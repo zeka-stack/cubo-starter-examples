@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  * <p>Description: 租户处理器 -主要实现mybatis-plus <a href="https://mp.baomidou.com/guide/tenant.html">...</a> </p>
  *
  * @author dong4j
- * @version 1.2.4
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.02.17 20:51
  * @since 1.0.0

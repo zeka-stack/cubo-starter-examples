@@ -17,7 +17,7 @@ public interface UserService extends BaseService<User> {
     /**
      * Transactional
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     void transactional();
 }

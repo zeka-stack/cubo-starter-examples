@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.01.25 23:53
- * @since 1.7.1
+ * @since 1.0.0
  */
 @Slf4j
 @ZekaTest(properties = {
@@ -44,7 +44,7 @@ public class P6spyServiceTest {
     /**
      * Test 3
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Test
     void test3() {
@@ -56,7 +56,7 @@ public class P6spyServiceTest {
     /**
      * Test transactional
      *
-     * @since 1.7.1
+     * @since 1.0.0
      */
     @Test
     void test_transactional() {
@@ -66,7 +66,7 @@ public class P6spyServiceTest {
     /**
      * Test
      *
-     * @since 1.7.1
+     * @since 1.0.0
      */
     @Test
     void testxx() {

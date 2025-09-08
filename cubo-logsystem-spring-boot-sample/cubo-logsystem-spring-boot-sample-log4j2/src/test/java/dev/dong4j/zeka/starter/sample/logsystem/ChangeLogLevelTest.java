@@ -8,7 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.02.26 14:52
  * @since 1.0.0

@@ -36,7 +36,7 @@ class UserServiceTest extends MybatisApplicationTest {
     /**
      * Test 3
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Test
     void test3() {
@@ -48,7 +48,7 @@ class UserServiceTest extends MybatisApplicationTest {
     /**
      * Test transactional
      *
-     * @since 1.7.1
+     * @since 1.0.0
      */
     @Test
     void test_transactional() {

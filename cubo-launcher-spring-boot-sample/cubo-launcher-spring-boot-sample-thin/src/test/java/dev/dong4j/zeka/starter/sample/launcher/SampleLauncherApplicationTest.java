@@ -3,6 +3,11 @@ package dev.dong4j.zeka.starter.sample.launcher;
 import dev.dong4j.zeka.kernel.common.util.JsonUtils;
 import dev.dong4j.zeka.kernel.test.ZekaTest;
 import dev.dong4j.zeka.starter.sample.launcher.config.CustomConfig;
+import jakarta.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -14,17 +19,11 @@ import org.springframework.boot.context.properties.bind.Bindable;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.core.env.Environment;
 
-import jakarta.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
 /**
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.06 13:03
  * @since 1.0.0
@@ -96,7 +95,7 @@ class SampleLauncherApplicationTest {
      * <p>Description: </p>
      *
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.03.07 21:06
      * @since 1.0.0

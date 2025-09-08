@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * <p>Description: 统一响应结果 </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.10 20:32
  * @since 1.0.0
@@ -127,7 +127,7 @@ public class Resut2Controller extends ServletController {
      */
     @GetMapping("/result_byte2")
     public Byte byteResult() {
-        return new Byte("111");
+        return Byte.valueOf("111");
     }
 
     /**
@@ -138,7 +138,7 @@ public class Resut2Controller extends ServletController {
      */
     @GetMapping("/result_byte_array2")
     public Byte[] byteArrayResult() {
-        return new Byte[]{new Byte("111")};
+        return new Byte[]{Byte.valueOf("111")};
     }
 
     /**
@@ -253,7 +253,7 @@ public class Resut2Controller extends ServletController {
      * Page 1
      *
      * @return the base page
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @GetMapping("/result_page")
     public BasePage<?> page1() {
@@ -275,7 +275,7 @@ public class Resut2Controller extends ServletController {
      * Page 2
      *
      * @return the page
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @GetMapping("/result_page_1")
     public IPage<TestEntity> page2() {
@@ -286,7 +286,7 @@ public class Resut2Controller extends ServletController {
      * Page 2
      *
      * @return the page
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @GetMapping("/result_page_2")
     public Result<IPage<TestEntity>> page3() {
@@ -298,7 +298,7 @@ public class Resut2Controller extends ServletController {
      * Init page object
      *
      * @return the page
-     * @since 1.7.0
+     * @since 1.0.0
      */
     private IPage<TestEntity> initPageObject() {
         return new IPage<TestEntity>() {

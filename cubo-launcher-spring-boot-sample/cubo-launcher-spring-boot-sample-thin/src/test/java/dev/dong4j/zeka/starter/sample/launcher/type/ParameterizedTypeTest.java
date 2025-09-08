@@ -1,20 +1,19 @@
 package dev.dong4j.zeka.starter.sample.launcher.type;
 
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
 /**
  * <p>Description: ParameterizedType 使用测试 参数化类型 </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.07 21:17
  * @since 1.0.0
@@ -83,7 +82,7 @@ class ParameterizedTypeTest {
      *
      * @param <V> parameter
      * @author dong4j
-     * @version 1.3.0
+     * @version 1.0.0
      * @email "mailto:dong4j@gmail.com"
      * @date 2020.03.07 21:17
      * @since 1.0.0
@@ -112,8 +111,7 @@ class ParameterizedTypeTest {
                 if (f.getName().equals("log")) {
                     continue;
                 }
-                if (f.getGenericType() instanceof ParameterizedType) {
-                    ParameterizedType parameterizedType = (ParameterizedType) f.getGenericType();
+                if (f.getGenericType() instanceof ParameterizedType parameterizedType) {
                     for (Type type : parameterizedType.getActualTypeArguments()) {
                         log.info(f.getName() + ": 获取 ParameterizedType:" + type);
                     }

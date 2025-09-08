@@ -15,7 +15,7 @@ import org.springframework.validation.annotation.Validated;
  * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.08.30 18:42
- * @since 1.6.0
+ * @since 1.0.0
  */
 @Slf4j
 @Validated
@@ -26,7 +26,7 @@ public class ValidationMethodService {
      * Test
      *
      * @param form form
-     * @since 1.6.0
+     * @since 1.0.0
      */
     public void test(TestForm form) {
         ValidatorUtils.validateResultProcessWithException(form);
@@ -37,7 +37,7 @@ public class ValidationMethodService {
      * Test 2
      *
      * @param account account
-     * @since 1.6.0
+     * @since 1.0.0
      */
     public void test2(@Length(min = 6, max = 20) @NotNull String account) {
         log.info("{}", account);

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 2.0.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2021.09.26 11:25
- * @since 2.0.0
+ * @since 1.0.0
  */
 @Slf4j
 @RestControllerWrapper("/api/version/method")
@@ -22,7 +22,7 @@ public class TestApiVersionOnMethodController {
      * Hello 1
      *
      * @return the string
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @ApiVersion(1)
     @GetMapping("hello1")
@@ -34,7 +34,7 @@ public class TestApiVersionOnMethodController {
      * Hello 2
      *
      * @return the string
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @ApiVersion(2)
     @GetMapping("hello2")
@@ -48,7 +48,7 @@ public class TestApiVersionOnMethodController {
      * Hello 3
      *
      * @return the string
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @ApiVersion(3)
     @GetMapping("hello3")
@@ -62,7 +62,7 @@ public class TestApiVersionOnMethodController {
      * Hello 5
      *
      * @return the string
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @ApiVersion({5, 6, 7})
     @GetMapping("hello567")
@@ -75,7 +75,7 @@ public class TestApiVersionOnMethodController {
      * Hello
      *
      * @return the string
-     * @since 2.0.0
+     * @since 1.0.0
      */
     @GetMapping("hello")
     public String hello() {

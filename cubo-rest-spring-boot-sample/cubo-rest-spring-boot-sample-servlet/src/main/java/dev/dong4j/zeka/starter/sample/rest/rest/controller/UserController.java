@@ -117,7 +117,7 @@ public class UserController extends ServletController {
      *
      * @param ids ids
      * @return the result
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @DeleteMapping("/json")
     @Operation(summary = "删除多个用户")
@@ -134,7 +134,7 @@ public class UserController extends ServletController {
      *
      * @param id id
      * @return the result
-     * @since 1.4.0
+     * @since 1.0.0
      */
     @DeleteMapping("/form")
     @Operation(summary = "删除多个用户")

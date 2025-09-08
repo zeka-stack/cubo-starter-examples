@@ -14,10 +14,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
  * <p>Description:  </p>
  *
  * @author dong4j
- * @version 1.7.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.12.07 19:10
- * @since 1.7.0
+ * @since 1.0.0
  */
 @Slf4j
 class WithNoServletControllerTest extends Chapter22ApplicationTest {

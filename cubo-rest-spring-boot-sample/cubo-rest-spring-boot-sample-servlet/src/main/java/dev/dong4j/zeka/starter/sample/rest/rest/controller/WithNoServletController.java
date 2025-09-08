@@ -24,7 +24,7 @@ public class WithNoServletController extends ServletController {
      * Get
      *
      * @return the object
-     * @since 1.7.0
+     * @since 1.0.0
      */
     @RequestMapping("/get")
     public Object get() {

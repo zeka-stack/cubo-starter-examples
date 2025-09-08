@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * <p>Description: 自定义分表策略 </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.02.23 08:39
  * @since 1.0.0

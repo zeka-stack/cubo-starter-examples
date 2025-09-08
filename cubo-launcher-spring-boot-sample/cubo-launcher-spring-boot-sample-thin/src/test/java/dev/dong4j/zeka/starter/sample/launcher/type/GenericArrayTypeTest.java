@@ -1,8 +1,5 @@
 package dev.dong4j.zeka.starter.sample.launcher.type;
 
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
-
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -10,6 +7,8 @@ import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.lang.reflect.WildcardType;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
 /**
  * <p>Description:
@@ -19,7 +18,7 @@ import java.util.List;
  *
  * @param <T> parameter
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.07 21:15
  * @since 1.0.0

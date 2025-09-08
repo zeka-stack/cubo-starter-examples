@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author hubin
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.02.22 19:49
  * @since 2018 -08-11

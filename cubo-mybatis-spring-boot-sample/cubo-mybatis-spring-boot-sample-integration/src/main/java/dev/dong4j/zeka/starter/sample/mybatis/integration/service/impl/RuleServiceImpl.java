@@ -32,7 +32,7 @@ public class RuleServiceImpl extends BaseServiceImpl<RuleDao, Rule> implements R
     /**
      * Transactional
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @Override
     @Transactional(rollbackFor = Throwable.class)

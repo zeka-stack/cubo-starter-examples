@@ -1,17 +1,16 @@
 package dev.dong4j.zeka.starter.sample.launcher.type;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.ResolvableType;
-
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 
 /**
  * <p>Description: 测试泛型 </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.07 21:14
  * @since 1.0.0

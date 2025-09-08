@@ -21,7 +21,7 @@ public class SampleMybatisIntegrationApplication extends ZekaStarter {
      * 自定义 tenantId 写入逻辑
      *
      * @return 返回 null 则忽略自动补填, 由业务端写入 tenantId dao 表
-     * @since 1.8.0
+     * @since 1.0.0
      */
     @Bean
     public MetaObjectChain tenantMetaObjectHandler() {

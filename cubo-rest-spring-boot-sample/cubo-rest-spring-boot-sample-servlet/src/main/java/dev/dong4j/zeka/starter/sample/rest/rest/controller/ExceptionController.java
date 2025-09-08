@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * <p>Description: 统一异常处理测试 </p>
  *
  * @author dong4j
- * @version 1.3.0
+ * @version 1.0.0
  * @email "mailto:dong4j@gmail.com"
  * @date 2020.03.10 13:27
  * @since 1.0.0
@@ -69,7 +69,7 @@ public class ExceptionController extends ServletController {
     /**
      * 异常包装
      *
-     * @since 1.6.0
+     * @since 1.0.0
      */
     @GetMapping("/wrapper")
     public void wrapper() {
