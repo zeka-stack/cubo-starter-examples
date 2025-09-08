@@ -11,10 +11,10 @@ import dev.dong4j.zeka.starter.messaging.template.model.SendResult;
 import dev.dong4j.zeka.starter.sample.messaging.Order;
 import dev.dong4j.zeka.starter.sample.messaging.Payment;
 import dev.dong4j.zeka.starter.sample.messaging.SampleKafkaApplicationTest;
+import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.junit.jupiter.api.BeforeEach;
@@ -63,7 +63,7 @@ public class MessageTemplateTest extends SampleKafkaApplicationTest {
         // 同步发送消息
         SendResult result = messageTemplate.sendSync(message);
 
-        log.info("消息发送成功: {}", result.getMessageId());
+        log.info("消息发送成功: {}", result.messageId());
     }
 
     @Test
@@ -74,7 +74,7 @@ public class MessageTemplateTest extends SampleKafkaApplicationTest {
             .addHeader("payment-status", "SUCCESS");
 
         SendResult result = messageTemplate.sendSync(message);
-        log.info("Payment message sent to {}", result.getTopic());
+        log.info("Payment message sent to {}", result.topic());
     }
 
     @Test
@@ -87,7 +87,7 @@ public class MessageTemplateTest extends SampleKafkaApplicationTest {
             if (ex != null) {
                 log.error("Async send failed for inventory update: {}", order.getId(), ex);
             } else {
-                log.debug("Inventory update sent: {}", result.getMessageId());
+                log.debug("Inventory update sent: {}", result.messageId());
             }
         });
     }
@@ -108,7 +108,7 @@ public class MessageTemplateTest extends SampleKafkaApplicationTest {
         // 明确指定使用Kafka发送
         SendResult result = messageTemplate.forType(MessagingType.KAFKA).sendSync(message);
 
-        log.info("Event sent via Kafka: {}", result.getMessageId());
+        log.info("Event sent via Kafka: {}", result.messageId());
     }
 
     @Test
