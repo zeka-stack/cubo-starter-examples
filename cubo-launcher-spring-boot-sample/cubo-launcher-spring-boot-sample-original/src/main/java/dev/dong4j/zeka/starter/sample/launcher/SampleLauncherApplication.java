@@ -2,7 +2,7 @@ package dev.dong4j.zeka.starter.sample.launcher;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.loader.JarLauncher;
+import org.springframework.boot.loader.launch.JarLauncher;
 
 /**
  * <p>Description: debug {@link JarLauncher} </p>

@@ -5,6 +5,7 @@ import dev.dong4j.zeka.kernel.common.enums.EnabledEnum;
 import dev.dong4j.zeka.starter.mybatis.base.BaseExtendPO;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.DispatchModeEnum;
 import dev.dong4j.zeka.starter.sample.mybatis.integration.enums.MatchModeEnum;
+import java.io.Serial;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -27,7 +28,9 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @TableName("rule")
 public class Rule extends BaseExtendPO<Long, Rule> {
-
+    /** serialVersionUID */
+    @Serial
+    private static final long serialVersionUID = 1L;
     /** IP_FROM */
     public static final String IP_FROM = "ip_from";
     /** IP_TO */
@@ -42,8 +45,6 @@ public class Rule extends BaseExtendPO<Long, Rule> {
     public static final String ENABLED = "enabled";
     /** DISPATCH_MODE */
     public static final String DISPATCH_MODE = "dispatch_mode";
-    /** serialVersionUID */
-    private static final long serialVersionUID = 1L;
     /** IP范围开始地址 */
     private Long ipFrom;
     /** IP范围结束地址 */
