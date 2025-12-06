@@ -40,7 +40,7 @@ knife4j:
     enable-search: false
     enable-footer: false
     enable-footer-custom: true
-    footer-custom-content: Apache License 2.0
+    footer-custom-content: MIT License
     enable-dynamic-parameter: false
     enable-debug: true
     enable-open-api: false
