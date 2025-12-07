@@ -1,0 +1,151 @@
+---
+published: 2022.05.23
+---
+
+# 端点管理示例
+
+## 概述
+
+本示例项目展示了如何使用 `cubo-endpoint-spring-boot` 组件进行应用监控和管理，支持 Servlet 和 Reactive 两种 Web 技术栈。
+
+## 子模块说明
+
+### 1. cubo-endpoint-spring-boot-sample-servlet
+
+**Servlet 端点示例**，展示了：
+
+- 应用信息端点
+- 健康检查端点
+- 性能监控端点
+- 自定义管理端点
+
+### 2. cubo-endpoint-spring-boot-sample-reactive
+
+**Reactive 端点示例**，展示了：
+
+- 响应式环境下的端点管理
+- 非阻塞的监控数据收集
+
+### 3. cubo-endpoint-spring-boot-sample-noweb
+
+**非 Web 应用端点示例**，展示了：
+
+- 非 Web 环境下的端点访问
+- 通过 JMX 访问端点
+
+## 快速开始
+
+### 运行 Servlet 示例
+
+```bash
+cd cubo-endpoint-spring-boot-sample-servlet
+mvn spring-boot:run
+```
+
+访问端点：
+
+- 应用信息：http://localhost:8080/actuator/info
+- 健康检查：http://localhost:8080/actuator/health
+- 所有端点：http://localhost:8080/actuator
+
+### 运行 Reactive 示例
+
+```bash
+cd cubo-endpoint-spring-boot-sample-reactive
+mvn spring-boot:run
+```
+
+## 高阶用法
+
+### 1. 自定义应用信息
+
+```yaml
+info:
+  app:
+    name: @project.name@
+    version: @project.version@
+    description: 应用描述
+  build:
+    time: @maven.build.timestamp@
+```
+
+### 2. 健康检查配置
+
+```yaml
+management:
+  health:
+    enabled: true
+    show-details: when-authorized
+    db:
+      enabled: true
+    redis:
+      enabled: true
+```
+
+### 3. 自定义健康指示器
+
+```java
+@Component
+public class CustomHealthIndicator implements HealthIndicator {
+
+    @Override
+    public Health health() {
+        // 自定义健康检查逻辑
+        if (isHealthy()) {
+            return Health.up()
+                .withDetail("status", "正常")
+                .build();
+        }
+        return Health.down()
+            .withDetail("status", "异常")
+            .build();
+    }
+}
+```
+
+### 4. 端点安全配置
+
+```yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+      base-path: /actuator
+  endpoint:
+    health:
+      roles: ADMIN
+```
+
+### 5. 自定义端点
+
+```java
+@Component
+@Endpoint(id = "custom")
+public class CustomEndpoint {
+
+    @ReadOperation
+    public Map<String, Object> custom() {
+        Map<String, Object> info = new HashMap<>();
+        info.put("custom", "value");
+        return info;
+    }
+}
+```
+
+### 6. 性能监控
+
+```yaml
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    metrics:
+      enabled: true
+```
+
+## 相关链接
+
+- [[cubo-starter/cubo-endpoint-spring-boot|端点管理]]

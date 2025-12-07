@@ -1,3 +1,7 @@
+---
+published: 2022.05.23
+---
+
 # SqlExecuteTimeoutEvent
 
 当 sql 执行时间超过 `zeka-stack.mybatis.performmax-time` 配置的时间会发送 `SqlExecuteTimeoutEvent` 事件, 目前需要业务端自己处理此事件, 推荐存入
