@@ -1,6 +1,17 @@
 package dev.dong4j.zeka.starter.sample.openapi;
 
 import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
+
 import dev.dong4j.zeka.kernel.common.api.R;
 import dev.dong4j.zeka.kernel.common.api.Result;
 import io.swagger.v3.oas.annotations.Operation;
@@ -11,18 +22,10 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>Description: </p>
@@ -46,7 +49,7 @@ public class TestController {
     @GetMapping("/user/{id}")
     @Operation(summary = "获取用户详情")
     @ApiOperationSupport(order = 1)
-    public Result<Void> findById(@Valid @NotNull @Size(min = 1) @PathVariable("id") Long id) {
+    public Result<Void> findById(@PathVariable @Valid @NotNull @Size(min = 1) Long id) {
         return R.succeed();
     }
 
@@ -88,7 +91,7 @@ public class TestController {
     @DeleteMapping("/user/{id}")
     @Operation(summary = "删除用户")
     @ApiOperationSupport(order = 4)
-    public Result<String> deleteById(@Valid @NotNull @Size(min = 1) @PathVariable("id") Long id) {
+    public Result<String> deleteById(@PathVariable @Valid @NotNull @Size(min = 1) Long id) {
         return R.succeed("delete user : " + id);
     }
 

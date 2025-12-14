@@ -1,5 +1,17 @@
 package dev.dong4j.zeka.starter.sample.rest.rest.controller;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import dev.dong4j.zeka.kernel.common.api.R;
 import dev.dong4j.zeka.kernel.common.api.Result;
 import dev.dong4j.zeka.starter.rest.ServletController;
@@ -10,17 +22,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * <p>Description: swagger test controller</p>
@@ -45,7 +47,7 @@ public class UserController extends ServletController {
     @GetMapping("/{id}")
     @Operation(summary = "获取用户详情")
 
-    public Result<User> findById(@Valid @NotNull @PathVariable("id") Long id) {
+    public Result<User> findById(@PathVariable @Valid @NotNull @Size(min = 1) Long id) {
         return this.ok(User.builder().id(id).name("dong4j").build());
     }
 
@@ -102,7 +104,7 @@ public class UserController extends ServletController {
      */
     @DeleteMapping("/{id}")
     @Operation(summary = "删除用户")
-    public Result<String> deleteById(@Valid @NotNull @Size(min = 1) @PathVariable("id") Long id) {
+    public Result<String> deleteById(@PathVariable @Valid @NotNull @Size(min = 1) Long id) {
         return R.succeed("delete user : " + id);
     }
 
