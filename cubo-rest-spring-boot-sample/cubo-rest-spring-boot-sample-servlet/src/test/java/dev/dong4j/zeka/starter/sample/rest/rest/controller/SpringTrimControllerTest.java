@@ -1,13 +1,14 @@
 package dev.dong4j.zeka.starter.sample.rest.rest.controller;
 
-import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
-import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import dev.dong4j.zeka.starter.sample.rest.rest.Chapter22ApplicationTest;
+import dev.dong4j.zeka.starter.sample.rest.rest.entity.po.User;
 
 /**
  * <p>Description: 字符串空白符测试 </p>
@@ -56,7 +57,7 @@ class SpringTrimControllerTest extends Chapter22ApplicationTest {
             )
             .andDo(MockMvcResultHandlers.print())
             .andExpect(MockMvcResultMatchers.status().isOk())
-            .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(MockMvcResultMatchers.jsonPath("$.data.name").value(RESULT));
     }
 
