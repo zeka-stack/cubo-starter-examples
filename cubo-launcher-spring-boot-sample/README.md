@@ -139,4 +139,4 @@ public class SampleApplication extends ZekaStarter {
 
 ## 相关链接
 
-- [[cubo-starter/cubo-launcher-spring-boot|应用启动器]]
+- [[cubo-starter/cubo-launcher-spring-boot/index|应用启动器]]

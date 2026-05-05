@@ -135,4 +135,4 @@ public class UserV2Controller {
 
 ## 相关链接
 
-- [[cubo-starter/cubo-openapi-spring-boot|API 文档]]
+- [[cubo-starter/cubo-openapi-spring-boot/index|API 文档]]

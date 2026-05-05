@@ -174,4 +174,4 @@ public class CustomSqlInterceptor implements Interceptor {
 
 ## 相关链接
 
-- [[cubo-starter/cubo-mybatis-spring-boot|数据访问]]
+- [[cubo-starter/cubo-mybatis-spring-boot/index|数据访问]]

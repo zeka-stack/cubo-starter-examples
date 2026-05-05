@@ -148,4 +148,4 @@ management:
 
 ## 相关链接
 
-- [[cubo-starter/cubo-endpoint-spring-boot|端点管理]]
+- [[cubo-starter/cubo-endpoint-spring-boot/index|端点管理]]

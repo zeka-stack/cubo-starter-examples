@@ -176,4 +176,4 @@ rocketmq:
 
 ## 相关链接
 
-- [[cubo-starter/cubo-messaging-spring-boot|消息处理]]
+- [[cubo-starter/cubo-messaging-spring-boot/index|消息处理]]

@@ -113,4 +113,4 @@ public class ReactiveController {
 
 ## 相关链接
 
-- [[cubo-starter/cubo-rest-spring-boot|REST API]]
+- [[cubo-starter/cubo-rest-spring-boot/index|REST API]]

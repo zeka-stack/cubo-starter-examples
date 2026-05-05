@@ -139,4 +139,4 @@ management:
 
 ## 相关链接
 
-- [[cubo-starter/cubo-logsystem-spring-boot|日志系统]]
+- [[cubo-starter/cubo-logsystem-spring-boot/index|日志系统]]
